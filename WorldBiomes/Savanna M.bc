@@ -1,4 +1,3 @@
-# This is the biome config file of the Savanna M biome, which is one of the vanilla biomes.
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -26,11 +25,14 @@ ResourceInheritance: true
 
 # Biome size from 0 to GenerationDepth. Defines in which biome layer this biome will be generated (see GenerationDepth).
 # Higher numbers give a smaller biome, lower numbers a larger biome.
-# Note: only applies to biomes spawned as part of a BiomeGroup (see WorldConfig).
-# For biomes spawned as isles, borders or rivers other settings are available.
-# Isle biomes:   BiomeSizeWhenIsle (see below)
-# Border biomes: BiomeSizeWhenBorder (see below)
-# River biomes:  RiverSize (see WorldConfig)
+# How this setting is used depends on the value of BiomeMode in the WorldConfig.
+# It will be used for:
+# - normal biomes, ice biomes, isle biomes and border biomes when BiomeMode is set to BeforeGroups
+# - biomes spawned as part of a BiomeGroup when BiomeMode is set to Normal.
+#   For biomes spawned as isles, borders or rivers other settings are available.
+#   Isle biomes:   BiomeSizeWhenIsle (see below)
+#   Border biomes: BiomeSizeWhenBorder (see below)
+#   River biomes:  RiverSize (see WorldConfig)
 BiomeSize: 4
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
@@ -41,11 +43,9 @@ BiomeSize: 4
 # Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
 BiomeRarity: 10
 
-# The hexadecimal color value of this biome. Used in the output of the /tc map command,
+# The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
 BiomeColor: #5B8015
-
-# (ReplaceToBiomeName is only available in custom biomes.)
 
 ####################
 # Isle biomes only #
@@ -58,13 +58,13 @@ BiomeColor: #5B8015
 # For example, Mushroom Isles spawn inside the Ocean biome.
 IsleInBiome: 
 
-# Size of this biome when spawned as an ilse biome.
+# Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
 BiomeSizeWhenIsle: 6
 
-# Rarity of this biome when spawned as an ilse biome.
+# Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
 BiomeRarityWhenIsle: 97
 
 ######################
@@ -83,7 +83,7 @@ BiomeIsBorder:
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
 NotBorderNear: 
 
-# Size of this biome when spawned as a border biome.
+# Size of this biome when spawned as a border biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* borders. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenBorder number must be larger than the BiomeSize of the other biome.
@@ -132,11 +132,12 @@ VolatilityWeight2: 0.45
 # Disable all noises except Volatility1 and Volatility2. Also disable default block chance from height.
 DisableBiomeHeight: false
 
-# List of custom height factor, 17 double entries, each entire control of about 7 blocks height from down. Positive entry - better chance of spawn blocks, negative - smaller
-# Values which affect your configuration may be found only experimental. That may be very big, like ~3000.0 depends from height
+# List of custom height factors, 17 double entries, each controls about 7
+# blocks height, starting at the bottom of the world. Positive entry - larger chance of spawn blocks, negative - smaller
+# Values which affect your configuration may be found only experimentally. Values may be very big, like ~3000.0 depends from height
 # Example:
 #   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-# Make empty layer above bedrock layer. 
+# Makes empty layer above bedrock layer. 
 CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
 
@@ -234,7 +235,7 @@ IceBlock: ICE
 
 # Block used as cooled or frozen lava.
 # Set this to OBSIDIAN for "frozen" lava lakes in cold biomes
-CooledLavaBlock: STATIONARY_LAVA
+CooledLavaBlock: OBSIDIAN
 
 
 #######################################################################
@@ -243,12 +244,15 @@ CooledLavaBlock: STATIONARY_LAVA
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-# Most of the settings here only have an effect on players with the client version of Terrain Control installed.
+# Most of the settings here only have an effect on players with the client version of Open Terrain Generator installed.
 # Biome temperature. Float value from 0.0 to 2.0.
-# On default biomes, this won't do anything except changing the grass and leaves colors slightly.
+# When this value is around 0.2, snow will fall on mountain peaks above y=90.
+# When this value is around 0.1, the whole biome will be covered in snow and ice.
+# However, on default biomes, this won't do anything except changing the grass and leaves colors slightly.
 BiomeTemperature: 1.1
 
 # Biome wetness. Float value from 0.0 to 1.0.
+# If this biome is a custom biome, and this value is set to 0, no rain will fall.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
 BiomeWetness: 0.0
 
@@ -324,7 +328,7 @@ FoliageColorIsMultiplier: true
 #                 if that fails, it attempts to place Taiga2 (100% chance).
 # PlantType:      one of the plant types: Allium, AzureBluet, BlueOrchid, BrownMushroom, Dandelion, DeadBush, DoubleTallgrass, Fern, LargeFern, Lilac, OrangeTulip, OxeyeDaisy, Peony, PinkTulip, Poppy, RedMushroom, RedTulip, RoseBush, Sunflower, Tallgrass, WhiteTulip
 #                 or simply a BlockName
-# IceSpikeType:   one of the ice spike types: Basement,SmallSpike,HugeSpike
+# IceSpikeType:   one of the ice spike types: Basement,HugeSpike,SmallSpike
 # Object:         can be a any kind of custom object (bo2 or bo3) but without the file extension. You can
 #                 also use UseWorld to spawn one of the object in the WorldObjects folder and UseBiome to spawn
 #                 one of the objects in the BiomeObjects setting. When using BO2s for UseWorld, the BO2 must have
@@ -336,22 +340,23 @@ FoliageColorIsMultiplier: true
 # Vein resource: not in vanilla. Starts an area where ores will spawn. Can be slow, so use a low Rarity (smaller than 1).
 # CustomStructure resource: starts a BO3 structure in the chunk.
 
-Ore(DIRT,33,10,100.0,0,256,STONE)
-Ore(GRAVEL,33,8,100.0,0,256,STONE)
-Ore(STONE:1,33,10,100.0,0,80,STONE)
-Ore(STONE:3,33,10,100.0,0,80,STONE)
-Ore(STONE:5,33,10,100.0,0,80,STONE)
-Ore(COAL_ORE,17,20,100.0,0,128,STONE)
-Ore(IRON_ORE,9,20,100.0,0,64,STONE)
-Ore(GOLD_ORE,9,2,100.0,0,32,STONE)
-Ore(REDSTONE_ORE,8,8,100.0,0,16,STONE)
-Ore(DIAMOND_ORE,8,1,100.0,0,16,STONE)
-Ore(LAPIS_ORE,7,1,100.0,0,16,STONE)
-UnderGroundLake(25,60,2,5.0,0,50)
+Ore(DIRT,33,10,100.0,0,255,STONE)
+Ore(GRAVEL,33,8,100.0,0,255,STONE)
+Ore(STONE:1,33,10,100.0,0,79,STONE)
+Ore(STONE:3,33,10,100.0,0,79,STONE)
+Ore(STONE:5,33,10,100.0,0,79,STONE)
+Ore(COAL_ORE,17,20,100.0,0,127,STONE)
+Ore(IRON_ORE,9,20,100.0,0,63,STONE)
+Ore(GOLD_ORE,9,2,100.0,0,31,STONE)
+Ore(REDSTONE_ORE,8,8,100.0,0,15,STONE)
+Ore(DIAMOND_ORE,8,1,100.0,0,15,STONE)
+Ore(LAPIS_ORE,7,1,100.0,0,15,STONE)
+UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(WATER,20,100.0,8,128,STONE)
 Liquid(LAVA,10,100.0,8,128,STONE)
-SmallLake(WATER,4,7.0,8,120)
-SmallLake(LAVA,2,1.0,8,120)
+SmallLake(WATER,4,7.0,8,119)
+SmallLake(LAVA,2,1.0,8,119)
+SmallLake(LAVA,2,8.0,6,50)
 UnderWaterOre(SAND,7,3,100.0,DIRT,GRASS)
 UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
 UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
@@ -368,7 +373,7 @@ CustomObject(UseWorld)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-# Terrain Control allows you to grow your custom objects from saplings, instead
+# OpenTerrainGenerator allows you to grow your custom objects from saplings, instead
 # of the vanilla trees. Add one or more Sapling functions here to override vanilla
 # spawning for that sapling.
 
@@ -403,16 +408,24 @@ BiomeObjects:
 # Minecraft will ignore this setting.
 StrongholdsEnabled: true
 
+# Whether a Woodland Mansion can be placed in this biome.
+WoodLandMansionsEnabled: false
+
 # Whether an Ocean Monument can be placed in this biome.
 OceanMonumentsEnabled: false
 
 # Whether a Nether Fortress can start in this biome. Might extend to neighbor biomes.
 NetherFortressesEnabled: true
 
-# The village type in this biome. Can be wood, sandstone or disabled.
-VillageType: wood
+# The village type in this biome. Can be wood, sandstone, taiga, savanna or disabled.
+VillageType: savanna
+
+# The mineshaft type in this biome. Can be normal, mesa or disabled.
+MineshaftType: normal
 
 # The mineshaft rarity from 0 to 100. 0 = no mineshafts, 1 = default rarity, 100 = a wooden chaos.
+# Note that mineshafts will never spawn, regardless of this setting, if 
+# MineshaftType was set to disabled
 MineshaftRarity: 1.0
 
 # The type of the aboveground rare building in this biome. Can be desertPyramid, jungleTemple, swampHut, igloo or disabled.
@@ -430,14 +443,46 @@ RareBuildingType: disabled
 # changes to this setting are ignored and overwritten.
 
 # The monsters (skeletons, zombies, etc.) that spawn in this biome
-SpawnMonsters: [{"mob": "Spider", "weight": 100, "min": 4, "max": 4}, {"mob": "Zombie", "weight": 100, "min": 4, "max": 4}, {"mob": "Skeleton", "weight": 100, "min": 4, "max": 4}, {"mob": "Creeper", "weight": 100, "min": 4, "max": 4}, {"mob": "Slime", "weight": 100, "min": 4, "max": 4}, {"mob": "Enderman", "weight": 10, "min": 1, "max": 4}, {"mob": "Witch", "weight": 5, "min": 1, "max": 1}]
+# For instance [{"mob": "Spider", "weight": 100, "min": 4, "max": 4}, {"mob": "Zombie", "weight": 100, "min": 4, "max": 4}]
+# Use the "/otg entities" console command to get a list of possible mobs and mob types.
+# Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
+SpawnMonsters: []
 
 # The friendly creatures (cows, pigs, etc.) that spawn in this biome
-SpawnCreatures: [{"mob": "Sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "Pig", "weight": 10, "min": 4, "max": 4}, {"mob": "Chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "Cow", "weight": 8, "min": 4, "max": 4}, {"mob": "EntityHorse", "weight": 1, "min": 2, "max": 6}]
+# For instance [{"mob": "Sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "Pig", "weight": 10, "min": 4, "max": 4}]
+# Use the "/otg entities" console command to get a list of possible mobs and mob types.
+# Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
+SpawnCreatures: []
 
 # The water creatures (only squids in vanilla) that spawn in this biome
-SpawnWaterCreatures: [{"mob": "Squid", "weight": 10, "min": 4, "max": 4}]
+# For instance [{"mob": "Squid", "weight": 10, "min": 4, "max": 4}]
+# Use the "/otg entities" console command to get a list of possible mobs and mob types.
+# Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
+SpawnWaterCreatures: []
 
 # The ambient creatures (only bats in vanila) that spawn in this biome
-SpawnAmbientCreatures: [{"mob": "Bat", "weight": 10, "min": 8, "max": 8}]
+# For instance [{"mob": "Bat", "weight": 10, "min": 8, "max": 8}]
+# Use the "/otg entities" console command to get a list of possible mobs and mob types.
+# Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
+SpawnAmbientCreatures: []
+
+# Forge Biome Dictionary ID used by other mods to identify a biome and place
+# modded blocks, items and mobs in it.
+# This will only work for modded items/blocks/mobs that are placed in biomes
+# while chunks are being generated. Most mods that add mods add their mobs to
+# biomes' internal mob list when MC starts and let MC's mob spawning mechanics
+# handle the actual spawning. This means that when TC creates new biomes
+# when it generates a world other mods do not add their mobs to those biomes.
+# This can be solved by using the InheritMobsBiomeName setting to inherit a
+# a mob list from a vanilla biome.
+# NOTE: Only works for biomes with id's under < 255 (non-virtual biomes).
+# For virtual biomes the BiomeDictId is inherited via ReplaceToBiomeName.
+BiomeDictId: HOT, SAVANNA, PLAINS, SPARSE
+
+# Inherit the internal mobs list of another biome. Inherited mobs can be 
+# overridden using the SpawnMonsters, SpawnCreatures, SpawnWaterCreatures
+# and SpawnAmbientCreatures settings. Any mob type defined using those settings
+# will override inherited mob settings for the same mob.
+# Use this setting to inherit modded mobs from vanilla biomes (see also: BiomeDictId)
+InheritMobsBiomeName: Savanna M
 
