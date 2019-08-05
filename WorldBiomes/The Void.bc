@@ -414,7 +414,7 @@ WoodLandMansionsEnabled: false
 OceanMonumentsEnabled: false
 
 # Whether a Nether Fortress can start in this biome. Might extend to neighbor biomes.
-NetherFortressesEnabled: true
+NetherFortressesEnabled: false
 
 # The village type in this biome. Can be wood, sandstone, taiga, savanna or disabled.
 VillageType: disabled

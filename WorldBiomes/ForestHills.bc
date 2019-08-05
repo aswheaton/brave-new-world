@@ -157,7 +157,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
 # Only available when ImprovedRivers is set to false in the WorldConfig.
 # Sets which biome is used as the river biome.
-RiverBiome: River High
+RiverBiome: River Hills
 
 #######################
 # ImprovedRivers:true #
@@ -166,7 +166,7 @@ RiverBiome: River High
 # Only available when ImprovedRivers is set to true in the WorldConfig.
 
 # Works the same as BiomeHeight (scroll up), but is used where a river is generated in this biome
-RiverHeight: 0.5
+RiverHeight: 0.35
 
 # Works the same as BiomeVolatility (scroll up), but is used where a river is generated in this biome
 RiverVolatility: 0.3
