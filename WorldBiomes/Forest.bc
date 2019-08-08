@@ -56,7 +56,7 @@ BiomeColor: #056621
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome:
+IsleInBiome: 
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -207,13 +207,13 @@ GroundBlock: DIRT
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl: STONE, STONE, -5.0, GRASS, DIRT, 0.0, DIRT:2, DIRT, 2.0, GRASS, DIRT, 7.0
+SurfaceAndGroundControl: STONE, STONE, -5.0, GRASS, DIRT, 0.0, DIRT:2, DIRT, 2.0, GRASS, DIRT, 7.0 
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
 # Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
-ReplacedBlocks: (GRASS,STONE,0,56),(DIRT:2,STONE,0,56),(SAND,GRAVEL,95,255)
+ReplacedBlocks: (GRASS,STONE,0,56),(DIRT,STONE,0,56),(SAND,GRAVEL,95,255)
 
 ################################
 # Water / Lava & Frozen States #

@@ -61,7 +61,7 @@ ReplaceToBiomeName:
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: Archipelago
+IsleInBiome: 
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.

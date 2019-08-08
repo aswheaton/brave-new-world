@@ -47,6 +47,11 @@ BiomeRarity: 95
 # and used in the input of BiomeMode: FromImage.
 BiomeColor: #0000FF
 
+# Replace this biome to specified after the terrain is generated.
+# This will make the world files contain the id of the specified biome, instead of the id of this biome.
+# This will cause saplings, colors and mob spawning work as in specified biome.
+ReplaceToBiomeName: 
+
 ####################
 # Isle biomes only #
 ####################
@@ -438,9 +443,28 @@ RareBuildingType: disabled
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-# It's not possible to change mob spawns in vanilla biomes. These
-# are the values used by vanilla for this biome. They are read-only:
-# changes to this setting are ignored and overwritten.
+# This is where you configure mob spawning. Mobs spawn in groups,
+# see http://minecraft.gamepedia.com/Spawn#Mob_spawning
+
+# A mobgroups is made of four parts. They are mob, weight, min and max.
+# The mob is one of the Minecraft internal mob names.
+# See http://minecraft.gamepedia.com/Chunk_format#Mobs
+# The weight is used for a random selection. This is a positive integer.
+# The min is the minimum amount of mobs spawning as a group. This is a positive integer.
+# The max is the maximum amount of mobs spawning as a group. This is a positive integer.
+
+# Mob groups are written to the config files in Json.
+# Json is a tree document format: http://en.wikipedia.org/wiki/JSON
+# Write a mobgroup like this: {"mob": "mobname", "weight": integer, "min": integer, "max": integer}
+# For example: {"mob": "Ocelot", "weight": 10, "min": 2, "max": 6}
+# For example: {"mob": "MushroomCow", "weight": 5, "min": 2, "max": 2}
+# A json list of mobgroups looks like this: [mobgroup, mobgroup, mobgroup...]
+# This would be an ampty list: []
+# You can validate your json here: http://jsonlint.com/
+
+# There are four categories of mobs: monsters, creatures, water creatures and ambient creatures.
+# In custom biomes, you can add your own mobgroups in the lists below. In the vanilla biomes,
+# your changes are ignored.
 
 # The monsters (skeletons, zombies, etc.) that spawn in this biome
 # For instance [{"mob": "Spider", "weight": 100, "min": 4, "max": 4}, {"mob": "Zombie", "weight": 100, "min": 4, "max": 4}]

@@ -50,7 +50,7 @@ BiomeColor: #ABCBAB
 # Replace this biome to specified after the terrain is generated.
 # This will make the world files contain the id of the specified biome, instead of the id of this biome.
 # This will cause saplings, colors and mob spawning work as in specified biome.
-ReplaceToBiomeName: Extreme Hills M
+ReplaceToBiomeName: 
 
 ####################
 # Isle biomes only #
@@ -61,7 +61,7 @@ ReplaceToBiomeName: Extreme Hills M
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: Extreme Hills+
+IsleInBiome: Mountains Extreme
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -162,7 +162,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
 # Only available when ImprovedRivers is set to false in the WorldConfig.
 # Sets which biome is used as the river biome.
-RiverBiome: 
+RiverBiome: River
 
 #######################
 # ImprovedRivers:true #
@@ -240,7 +240,7 @@ IceBlock: ICE
 
 # Block used as cooled or frozen lava.
 # Set this to OBSIDIAN for "frozen" lava lakes in cold biomes
-CooledLavaBlock: STATIONARY_LAVA
+CooledLavaBlock: OBSIDIAN
 
 
 #######################################################################
@@ -364,7 +364,6 @@ Ore(EMERALD_ORE,7,1,100.0,8,56,STONE)
 UnderWaterOre(SAND,7,3,100.0,DIRT,GRASS)
 UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
 UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
-Grass(DeadBush,NotGrouped,10,100.0,SNOW_BLOCK,STONE)
 Plant(PUMPKIN:0,1,3.0,0,128,GRASS)
 Liquid(WATER,70,100.0,8,256,STONE)
 Liquid(LAVA,10,100.0,8,128,STONE)

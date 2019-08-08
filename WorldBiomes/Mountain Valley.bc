@@ -33,7 +33,7 @@ ResourceInheritance: true
 #   Isle biomes:   BiomeSizeWhenIsle (see below)
 #   Border biomes: BiomeSizeWhenBorder (see below)
 #   River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 2
+BiomeSize: 4
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -45,12 +45,12 @@ BiomeRarity: 75
 
 # The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #4B7060
+BiomeColor: #A4A4A4
 
 # Replace this biome to specified after the terrain is generated.
 # This will make the world files contain the id of the specified biome, instead of the id of this biome.
 # This will cause saplings, colors and mob spawning work as in specified biome.
-ReplaceToBiomeName: Stone Beach
+ReplaceToBiomeName:
 
 ####################
 # Isle biomes only #
@@ -61,7 +61,7 @@ ReplaceToBiomeName: Stone Beach
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: Extreme Hills, Extreme Hills+
+IsleInBiome: Mountains, Mountains Extreme
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -104,7 +104,7 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight mean how much height will be added in terrain generation
 # It is double value from -10.0 to 10.0
 # Value 0.0 equivalent half of map height with all other default settings
-BiomeHeight: 0.45
+BiomeHeight: 1.0
 
 # Biome volatility.
 BiomeVolatility: 0.1
@@ -162,7 +162,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
 # Only available when ImprovedRivers is set to false in the WorldConfig.
 # Sets which biome is used as the river biome.
-RiverBiome: 
+RiverBiome: River
 
 #######################
 # ImprovedRivers:true #
@@ -240,7 +240,7 @@ IceBlock: ICE
 
 # Block used as cooled or frozen lava.
 # Set this to OBSIDIAN for "frozen" lava lakes in cold biomes
-CooledLavaBlock: ICE
+CooledLavaBlock: OBSIDIAN
 
 
 #######################################################################
