@@ -8,7 +8,7 @@
 # This should be the value of the biomeConfig you wish to extend.
 # The extended config will be loaded, at which point the configs included below
 # will overwrite any configs loaded from the extended config.
-BiomeExtends: 
+BiomeExtends:
 
 # When set to true, all resources of the parent biome (if any) will be copied
 # to the resources queue of this biome. If a resource in the parent biome looks
@@ -45,12 +45,12 @@ BiomeRarity: 75
 
 # The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #606060
+BiomeColor: #696969
 
 # Replace this biome to specified after the terrain is generated.
 # This will make the world files contain the id of the specified biome, instead of the id of this biome.
 # This will cause saplings, colors and mob spawning work as in specified biome.
-ReplaceToBiomeName: 
+ReplaceToBiomeName:
 
 ####################
 # Isle biomes only #
@@ -82,11 +82,11 @@ BiomeRarityWhenIsle: 99
 # List of biomes this biome can be a border of.
 # For example, the Beach biome is a border on the Ocean biome, so
 # it can spawn anywhere on the border of an ocean.
-BiomeIsBorder: 
+BiomeIsBorder:
 
 # List of biomes that cancel spawning of this biome.
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
-NotBorderNear: 
+NotBorderNear:
 
 # Size of this biome when spawned as a border biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -119,7 +119,7 @@ SmoothRadius: 3
 # If the value is less than 0, then it will cause the terrain to either increase to a lower height before leveling out or decrease in height if the value is a large enough negative.
 MaxAverageHeight: -0.2
 
-# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation. 
+# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation.
 # If the value is less than 0, then it will cause the terrain to either fall to a lesser depth before leveling out or increase in height if the value is a large enough negative.
 MaxAverageDepth: 0.0
 
@@ -142,7 +142,7 @@ DisableBiomeHeight: false
 # Values which affect your configuration may be found only experimentally. Values may be very big, like ~3000.0 depends from height
 # Example:
 #   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-# Makes empty layer above bedrock layer. 
+# Makes empty layer above bedrock layer.
 CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
 
@@ -212,12 +212,12 @@ GroundBlock: DIRT
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl: GRASS, DIRT, 1.0, STONE, STONE, 10.0 
+SurfaceAndGroundControl: GRASS, DIRT, 1.0, STONE, STONE, 10.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
-# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
+# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height
 ReplacedBlocks: (GRASS,STONE,141,256),(SNOW,AIR,90,140)
 
 ################################
@@ -228,7 +228,7 @@ ReplacedBlocks: (GRASS,STONE,141,256),(SNOW,AIR,90,140)
 UseWorldWaterLevel: true
 
 # Set water level. Every empty between this levels will be fill water or another block from WaterBlock.
-WaterLevelMax: 75
+WaterLevelMax: 63
 
 WaterLevelMin: 0
 
@@ -321,7 +321,7 @@ FoliageColorIsMultiplier: true
 # Frequency:      number of attempts to place this resource in each chunk.
 # Rarity:         chance for each attempt, Rarity:100 - mean 100% to pass, Rarity:1 - mean 1% to pass.
 # MinAltitude and MaxAltitude: height limits.
-# BlockSource:    mean where or whereupon resource will be placed 
+# BlockSource:    mean where or whereupon resource will be placed
 # TreeType:       Tree (original oak tree) - BigTree - Birch - TallBirch - SwampTree -
 #                 HugeMushroom (randomly red or brown) - HugeRedMushroom - HugeBrownMushroom -
 #                 Taiga1 - Taiga2 - HugeTaiga1 - HugeTaiga2 -
@@ -369,8 +369,7 @@ UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
 UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
 Dungeon(8,100.0,0,128)
 Tree(1,ME15,40,ME16,40,ME17,40,ME18,40)
-Tree(2,smallbushoak,10,smallbushoak2,10,smallbushoak3,10,smallbushoak4,10,smallbushoak,10,smallbushoak5,10,smallbushspruce,15,smallbushspruce2,15,smallbushspruce3,15,smallbushspruce4,15,smallbushspruce,15)
-Tree(1,sprucewarmtree1,20,sprucewarmtree2,20,sprucewarmtree3,20,sprucewarmtree4,20,BigTree,50,Taiga2,100)
+Tree(1,Taiga1,50,Taiga2,100)
 Tree(1,we-AndesiteRock,5,we-CoalRock,5,we-GraniteRock,5)
 Grass(Tallgrass,NotGrouped,10,100.0,GRASS,DIRT)
 Plant(Dandelion,4,100.0,0,128,GRASS,DIRT)
@@ -405,7 +404,7 @@ Plant(PUMPKIN:0,1,3.0,0,128,GRASS)
 #######################################################################
 
 # These objects will spawn when using the UseBiome keyword.
-BiomeObjects: 
+BiomeObjects:
 
 
 #######################################################################
@@ -437,7 +436,7 @@ VillageType: disabled
 MineshaftType: normal
 
 # The mineshaft rarity from 0 to 100. 0 = no mineshafts, 1 = default rarity, 100 = a wooden chaos.
-# Note that mineshafts will never spawn, regardless of this setting, if 
+# Note that mineshafts will never spawn, regardless of this setting, if
 # MineshaftType was set to disabled
 MineshaftRarity: 1.0
 
@@ -511,10 +510,9 @@ SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
 # For virtual biomes the BiomeDictId is inherited via ReplaceToBiomeName.
 BiomeDictId: MOUNTAIN, FOREST, SPARSE
 
-# Inherit the internal mobs list of another biome. Inherited mobs can be 
+# Inherit the internal mobs list of another biome. Inherited mobs can be
 # overridden using the SpawnMonsters, SpawnCreatures, SpawnWaterCreatures
 # and SpawnAmbientCreatures settings. Any mob type defined using those settings
 # will override inherited mob settings for the same mob.
 # Use this setting to inherit modded mobs from vanilla biomes (see also: BiomeDictId)
 InheritMobsBiomeName: Extreme Hills+
-

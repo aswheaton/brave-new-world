@@ -8,7 +8,7 @@
 # This should be the value of the biomeConfig you wish to extend.
 # The extended config will be loaded, at which point the configs included below
 # will overwrite any configs loaded from the extended config.
-BiomeExtends:
+BiomeExtends: 
 
 # When set to true, all resources of the parent biome (if any) will be copied
 # to the resources queue of this biome. If a resource in the parent biome looks
@@ -33,7 +33,7 @@ ResourceInheritance: true
 #   Isle biomes:   BiomeSizeWhenIsle (see below)
 #   Border biomes: BiomeSizeWhenBorder (see below)
 #   River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 2
+BiomeSize: 4
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -41,16 +41,11 @@ BiomeSize: 2
 #   50 rarity mean 1/11 chance than other
 # For isle biomes see the BiomeRarityWhenIsle setting below.
 # Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
-BiomeRarity: 99
+BiomeRarity: 100
 
 # The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #A4A4A4
-
-# Replace this biome to specified after the terrain is generated.
-# This will make the world files contain the id of the specified biome, instead of the id of this biome.
-# This will cause saplings, colors and mob spawning work as in specified biome.
-ReplaceToBiomeName:
+BiomeColor: #72789A
 
 ####################
 # Isle biomes only #
@@ -61,7 +56,7 @@ ReplaceToBiomeName:
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome:
+IsleInBiome: 
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -82,11 +77,11 @@ BiomeRarityWhenIsle: 97
 # List of biomes this biome can be a border of.
 # For example, the Beach biome is a border on the Ocean biome, so
 # it can spawn anywhere on the border of an ocean.
-BiomeIsBorder:
+BiomeIsBorder: Extreme Hills
 
 # List of biomes that cancel spawning of this biome.
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
-NotBorderNear:
+NotBorderNear: Extreme Hills+
 
 # Size of this biome when spawned as a border biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -104,35 +99,35 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight mean how much height will be added in terrain generation
 # It is double value from -10.0 to 10.0
 # Value 0.0 equivalent half of map height with all other default settings
-BiomeHeight: 2.2
+BiomeHeight: 0.8
 
 # Biome volatility.
-BiomeVolatility: 0.41
+BiomeVolatility: 0.3
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 3
+SmoothRadius: 2
 
 # If this value is greater than 0, then it will affect how much, on average, the terrain will rise before leveling off when it begins to increase in elevation.
 # If the value is less than 0, then it will cause the terrain to either increase to a lower height before leveling out or decrease in height if the value is a large enough negative.
-MaxAverageHeight: -0.2
+MaxAverageHeight: 0.0
 
-# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation.
+# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation. 
 # If the value is less than 0, then it will cause the terrain to either fall to a lesser depth before leveling out or increase in height if the value is a large enough negative.
 MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.7
+Volatility1: 0.0
 
-Volatility2: 0.5
+Volatility2: 0.0
 
 # Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
-VolatilityWeight1: 1.5
+VolatilityWeight1: 0.5
 
-VolatilityWeight2: 0.8
+VolatilityWeight2: 0.45
 
 # Disable all noises except Volatility1 and Volatility2. Also disable default block chance from height.
 DisableBiomeHeight: false
@@ -142,7 +137,7 @@ DisableBiomeHeight: false
 # Values which affect your configuration may be found only experimentally. Values may be very big, like ~3000.0 depends from height
 # Example:
 #   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-# Makes empty layer above bedrock layer.
+# Makes empty layer above bedrock layer. 
 CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
 
@@ -171,14 +166,14 @@ RiverBiome: River
 # Only available when ImprovedRivers is set to true in the WorldConfig.
 
 # Works the same as BiomeHeight (scroll up), but is used where a river is generated in this biome
-RiverHeight: 2.0
+RiverHeight: -1.0
 
 # Works the same as BiomeVolatility (scroll up), but is used where a river is generated in this biome
 RiverVolatility: 0.3
 
 # Works the same as WaterLevelMax (scroll down), but is used where a river is generated in this biome
 # Can be used to create elevated rivers
-RiverWaterLevel: 95
+RiverWaterLevel: 63
 
 # Works the same as CustomHeightControl (scroll up), but is used where a river is generated in this biome
 RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
@@ -212,13 +207,13 @@ GroundBlock: DIRT
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl: GRASS, DIRT, 1.0, STONE, STONE, 10.0
+SurfaceAndGroundControl: 
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
-# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height
-ReplacedBlocks: (GRASS,STONE,141,256),(DIRT,STONE,141,256),(SNOW,AIR,90,130)
+# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
+ReplacedBlocks: None
 
 ################################
 # Water / Lava & Frozen States #
@@ -254,7 +249,7 @@ CooledLavaBlock: OBSIDIAN
 # When this value is around 0.2, snow will fall on mountain peaks above y=90.
 # When this value is around 0.1, the whole biome will be covered in snow and ice.
 # However, on default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.25
+BiomeTemperature: 0.2
 
 # Biome wetness. Float value from 0.0 to 1.0.
 # If this biome is a custom biome, and this value is set to 0, no rain will fall.
@@ -321,7 +316,7 @@ FoliageColorIsMultiplier: true
 # Frequency:      number of attempts to place this resource in each chunk.
 # Rarity:         chance for each attempt, Rarity:100 - mean 100% to pass, Rarity:1 - mean 1% to pass.
 # MinAltitude and MaxAltitude: height limits.
-# BlockSource:    mean where or whereupon resource will be placed
+# BlockSource:    mean where or whereupon resource will be placed 
 # TreeType:       Tree (original oak tree) - BigTree - Birch - TallBirch - SwampTree -
 #                 HugeMushroom (randomly red or brown) - HugeRedMushroom - HugeBrownMushroom -
 #                 Taiga1 - Taiga2 - HugeTaiga1 - HugeTaiga2 -
@@ -345,39 +340,33 @@ FoliageColorIsMultiplier: true
 # Vein resource: not in vanilla. Starts an area where ores will spawn. Can be slow, so use a low Rarity (smaller than 1).
 # CustomStructure resource: starts a BO3 structure in the chunk.
 
-Ore(DIRT,33,10,100.0,0,256,STONE)
-Ore(GRAVEL,33,8,100.0,0,256,STONE)
-Ore(STONE:1,33,10,100.0,0,80,STONE)
-Ore(STONE:3,33,10,100.0,0,80,STONE)
-Ore(STONE:5,33,10,100.0,0,80,STONE)
-Ore(COAL_ORE,17,20,100.0,0,128,STONE)
-Ore(IRON_ORE,9,20,100.0,0,64,STONE)
-Ore(GOLD_ORE,9,2,100.0,0,32,STONE)
-Ore(REDSTONE_ORE,8,8,100.0,0,16,STONE)
-Ore(DIAMOND_ORE,8,1,100.0,0,16,STONE)
-Ore(LAPIS_ORE,7,1,100.0,0,16,STONE)
-Ore(EMERALD_ORE,5,1,100.0,4,32,STONE)
-UnderGroundLake(25,60,2,5.0,0,50)
+Ore(DIRT,33,10,100.0,0,255,STONE)
+Ore(GRAVEL,33,8,100.0,0,255,STONE)
+Ore(STONE:1,33,10,100.0,0,79,STONE)
+Ore(STONE:3,33,10,100.0,0,79,STONE)
+Ore(STONE:5,33,10,100.0,0,79,STONE)
+Ore(COAL_ORE,17,20,100.0,0,127,STONE)
+Ore(IRON_ORE,9,20,100.0,0,63,STONE)
+Ore(GOLD_ORE,9,2,100.0,0,31,STONE)
+Ore(REDSTONE_ORE,8,8,100.0,0,15,STONE)
+Ore(DIAMOND_ORE,8,1,100.0,0,15,STONE)
+Ore(LAPIS_ORE,7,1,100.0,0,15,STONE)
+Ore(EMERALD_ORE,5,1,100.0,4,31,STONE)
+UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(WATER,20,100.0,8,128,STONE)
 Liquid(LAVA,10,100.0,8,128,STONE)
-SmallLake(WATER,4,7.0,8,120)
-SmallLake(LAVA,2,1.0,8,120)
-SurfacePatch(SNOW_BLOCK,SNOW,120,150,GRASS,DIRT)
-SurfacePatch(SNOW_BLOCK,SNOW,125,155,STONE)
+SmallLake(WATER,4,7.0,8,119)
+SmallLake(LAVA,2,1.0,8,119)
+SmallLake(LAVA,2,8.0,6,50)
 UnderWaterOre(SAND,7,3,100.0,DIRT,GRASS)
 UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
 UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
 Dungeon(8,100.0,0,128)
-Tree(4,ME15,40,ME16,40,ME17,40,ME18,40)
-Tree(1,Taiga1,50,Taiga2,100)
-Tree(1,we-AndesiteRock,5,we-CoalRock,5,we-GraniteRock,5)
+Tree(1,Taiga2,10,BigTree,1,Tree,9)
 Grass(Tallgrass,NotGrouped,10,100.0,GRASS,DIRT)
 Plant(Dandelion,4,100.0,0,128,GRASS,DIRT)
-Plant(Allium,4,100.0,0,138,GRASS,DIRT)
-Plant(Tallgrass,20,100.0,0,138,GRASS,DIRT)
-Plant(Fern,4,100.0,128,256,GRASS,DIRT)
-Plant(LargeFern,4,100.0,140,256,GRASS,DIRT)
-Plant(PUMPKIN:0,1,3.0,0,128,GRASS)
+Plant(PUMPKIN,1,3.0,0,128,GRASS)
+CustomObject(UseWorld)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -404,7 +393,7 @@ Plant(PUMPKIN:0,1,3.0,0,128,GRASS)
 #######################################################################
 
 # These objects will spawn when using the UseBiome keyword.
-BiomeObjects:
+BiomeObjects: 
 
 
 #######################################################################
@@ -427,7 +416,7 @@ WoodLandMansionsEnabled: false
 OceanMonumentsEnabled: false
 
 # Whether a Nether Fortress can start in this biome. Might extend to neighbor biomes.
-NetherFortressesEnabled: false
+NetherFortressesEnabled: true
 
 # The village type in this biome. Can be wood, sandstone, taiga, savanna or disabled.
 VillageType: disabled
@@ -436,7 +425,7 @@ VillageType: disabled
 MineshaftType: normal
 
 # The mineshaft rarity from 0 to 100. 0 = no mineshafts, 1 = default rarity, 100 = a wooden chaos.
-# Note that mineshafts will never spawn, regardless of this setting, if
+# Note that mineshafts will never spawn, regardless of this setting, if 
 # MineshaftType was set to disabled
 MineshaftRarity: 1.0
 
@@ -450,52 +439,33 @@ RareBuildingType: disabled
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-# This is where you configure mob spawning. Mobs spawn in groups,
-# see http://minecraft.gamepedia.com/Spawn#Mob_spawning
-
-# A mobgroups is made of four parts. They are mob, weight, min and max.
-# The mob is one of the Minecraft internal mob names.
-# See http://minecraft.gamepedia.com/Chunk_format#Mobs
-# The weight is used for a random selection. This is a positive integer.
-# The min is the minimum amount of mobs spawning as a group. This is a positive integer.
-# The max is the maximum amount of mobs spawning as a group. This is a positive integer.
-
-# Mob groups are written to the config files in Json.
-# Json is a tree document format: http://en.wikipedia.org/wiki/JSON
-# Write a mobgroup like this: {"mob": "mobname", "weight": integer, "min": integer, "max": integer}
-# For example: {"mob": "Ocelot", "weight": 10, "min": 2, "max": 6}
-# For example: {"mob": "MushroomCow", "weight": 5, "min": 2, "max": 2}
-# A json list of mobgroups looks like this: [mobgroup, mobgroup, mobgroup...]
-# This would be an ampty list: []
-# You can validate your json here: http://jsonlint.com/
-
-# There are four categories of mobs: monsters, creatures, water creatures and ambient creatures.
-# In custom biomes, you can add your own mobgroups in the lists below. In the vanilla biomes,
-# your changes are ignored.
+# It's not possible to change mob spawns in vanilla biomes. These
+# are the values used by vanilla for this biome. They are read-only:
+# changes to this setting are ignored and overwritten.
 
 # The monsters (skeletons, zombies, etc.) that spawn in this biome
 # For instance [{"mob": "Spider", "weight": 100, "min": 4, "max": 4}, {"mob": "Zombie", "weight": 100, "min": 4, "max": 4}]
 # Use the "/otg entities" console command to get a list of possible mobs and mob types.
 # Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
-SpawnMonsters: [{"mob": "spider", "weight": 100, "min": 4, "max": 4}, {"mob": "zombie", "weight": 100, "min": 4, "max": 4}, {"mob": "skeleton", "weight": 100, "min": 4, "max": 4}, {"mob": "creeper", "weight": 100, "min": 4, "max": 4}, {"mob": "slime", "weight": 100, "min": 4, "max": 4}, {"mob": "enderman", "weight": 10, "min": 1, "max": 4}, {"mob": "witch", "weight": 5, "min": 1, "max": 1}]
+SpawnMonsters: []
 
 # The friendly creatures (cows, pigs, etc.) that spawn in this biome
 # For instance [{"mob": "Sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "Pig", "weight": 10, "min": 4, "max": 4}]
 # Use the "/otg entities" console command to get a list of possible mobs and mob types.
 # Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
-SpawnCreatures: [{"mob": "sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "pig", "weight": 10, "min": 4, "max": 4}, {"mob": "chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "cow", "weight": 8, "min": 4, "max": 4}]
+SpawnCreatures: []
 
 # The water creatures (only squids in vanilla) that spawn in this biome
 # For instance [{"mob": "Squid", "weight": 10, "min": 4, "max": 4}]
 # Use the "/otg entities" console command to get a list of possible mobs and mob types.
 # Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
-SpawnWaterCreatures: [{"mob": "squid", "weight": 10, "min": 4, "max": 4}]
+SpawnWaterCreatures: []
 
 # The ambient creatures (only bats in vanila) that spawn in this biome
 # For instance [{"mob": "Bat", "weight": 10, "min": 8, "max": 8}]
 # Use the "/otg entities" console command to get a list of possible mobs and mob types.
 # Use the "/otg biome -m" console command to get the list of registered mobs for a biome.
-SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
+SpawnAmbientCreatures: []
 
 # Forge Biome Dictionary ID used by other mods to identify a biome and place
 # modded blocks, items and mobs in it.
@@ -508,11 +478,12 @@ SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
 # a mob list from a vanilla biome.
 # NOTE: Only works for biomes with id's under < 255 (non-virtual biomes).
 # For virtual biomes the BiomeDictId is inherited via ReplaceToBiomeName.
-BiomeDictId: MOUNTAIN, HILLS
+BiomeDictId: MOUNTAIN
 
-# Inherit the internal mobs list of another biome. Inherited mobs can be
+# Inherit the internal mobs list of another biome. Inherited mobs can be 
 # overridden using the SpawnMonsters, SpawnCreatures, SpawnWaterCreatures
 # and SpawnAmbientCreatures settings. Any mob type defined using those settings
 # will override inherited mob settings for the same mob.
 # Use this setting to inherit modded mobs from vanilla biomes (see also: BiomeDictId)
-InheritMobsBiomeName: Extreme Hills
+InheritMobsBiomeName: Extreme Hills Edge
+
