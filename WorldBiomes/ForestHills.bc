@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends:
+BiomeExtends: 
 
 ResourceInheritance: true
 
@@ -36,9 +36,9 @@ BiomeRarityWhenIsle: 97
 # Border biomes only #
 ######################
 
-BiomeIsBorder:
+BiomeIsBorder: 
 
-NotBorderNear:
+NotBorderNear: 
 
 BiomeSizeWhenBorder: 8
 
@@ -109,7 +109,7 @@ SurfaceBlock: GRASS
 
 GroundBlock: DIRT
 
-SurfaceAndGroundControl:
+SurfaceAndGroundControl: 
 
 ReplacedBlocks: None
 
@@ -205,7 +205,7 @@ CustomObject(UseWorld)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects:
+BiomeObjects: 
 
 
 #######################################################################
@@ -248,3 +248,4 @@ SpawnAmbientCreatures: []
 BiomeDictId: FOREST, HILLS
 
 InheritMobsBiomeName: ForestHills
+

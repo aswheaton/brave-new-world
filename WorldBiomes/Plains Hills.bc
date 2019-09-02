@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends:
+BiomeExtends: 
 
 ResourceInheritance: true
 
@@ -22,7 +22,7 @@ BiomeRarity: 97
 
 BiomeColor: #79A04C
 
-ReplaceToBiomeName:
+ReplaceToBiomeName: 
 
 ####################
 # Isle biomes only #
@@ -38,9 +38,9 @@ BiomeRarityWhenIsle: 97
 # Border biomes only #
 ######################
 
-BiomeIsBorder:
+BiomeIsBorder: 
 
-NotBorderNear:
+NotBorderNear: 
 
 BiomeSizeWhenBorder: 8
 
@@ -111,7 +111,7 @@ SurfaceBlock: GRASS
 
 GroundBlock: DIRT
 
-SurfaceAndGroundControl: STONE, STONE, -6.0, GRASS, STONE, -5.0, GRASS, DIRT, 7.0
+SurfaceAndGroundControl: STONE, STONE, -6.0, GRASS, STONE, -5.0, GRASS, DIRT, 7.0 
 
 ReplacedBlocks: (GRASS,STONE,0,56),(SAND,DIRT,95,255)
 
@@ -210,7 +210,7 @@ CustomObject(UseWorld)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects:
+BiomeObjects: 
 
 
 #######################################################################
@@ -253,3 +253,4 @@ SpawnAmbientCreatures: []
 BiomeDictId: PLAINS
 
 InheritMobsBiomeName: Plains
+

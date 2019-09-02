@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends:
+BiomeExtends: 
 
 ResourceInheritance: true
 
@@ -22,13 +22,13 @@ BiomeRarity: 95
 
 BiomeColor: #0000FF
 
-ReplaceToBiomeName:
+ReplaceToBiomeName: 
 
 ####################
 # Isle biomes only #
 ####################
 
-IsleInBiome:
+IsleInBiome: 
 
 BiomeSizeWhenIsle: 6
 
@@ -38,9 +38,9 @@ BiomeRarityWhenIsle: 97
 # Border biomes only #
 ######################
 
-BiomeIsBorder:
+BiomeIsBorder: 
 
-NotBorderNear:
+NotBorderNear: 
 
 BiomeSizeWhenBorder: 8
 
@@ -111,7 +111,7 @@ SurfaceBlock: GRASS
 
 GroundBlock: DIRT
 
-SurfaceAndGroundControl:
+SurfaceAndGroundControl: 
 
 ReplacedBlocks: None
 
@@ -201,7 +201,7 @@ CustomObject(UseWorld)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects:
+BiomeObjects: 
 
 
 #######################################################################
@@ -244,3 +244,4 @@ SpawnAmbientCreatures: []
 BiomeDictId: RIVER
 
 InheritMobsBiomeName: River
+

@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends:
+BiomeExtends: 
 
 ResourceInheritance: true
 
@@ -26,7 +26,7 @@ BiomeColor: #A2A284
 # Isle biomes only #
 ####################
 
-IsleInBiome:
+IsleInBiome: 
 
 BiomeSizeWhenIsle: 6
 
@@ -49,7 +49,7 @@ BiomeSizeWhenBorder: 8
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeHeight: -1.80
+BiomeHeight: -1.8
 
 BiomeVolatility: 0.8
 
@@ -109,7 +109,7 @@ SurfaceBlock: STONE
 
 GroundBlock: STONE
 
-SurfaceAndGroundControl:
+SurfaceAndGroundControl: 
 
 ReplacedBlocks: None
 
@@ -198,7 +198,7 @@ CustomObject(UseWorld)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects:
+BiomeObjects: 
 
 
 #######################################################################
@@ -241,3 +241,4 @@ SpawnAmbientCreatures: []
 BiomeDictId: BEACH
 
 InheritMobsBiomeName: Stone Beach
+

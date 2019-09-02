@@ -53,7 +53,7 @@ BiomeSizeWhenBorder: 6
 
 BiomeHeight: -1.0
 
-BiomeVolatility: 0.3
+BiomeVolatility: 0.25
 
 SmoothRadius: 8
 
