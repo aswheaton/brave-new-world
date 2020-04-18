@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends: 
+BiomeExtends:
 
 ResourceInheritance: true
 
@@ -22,7 +22,7 @@ BiomeRarity: 97
 
 BiomeColor: #72789A
 
-ReplaceToBiomeName: 
+ReplaceToBiomeName:
 
 ####################
 # Isle biomes only #
@@ -42,7 +42,7 @@ BiomeIsBorder: Mountains, Cold Taiga
 
 NotBorderNear: Beach, Cold Taiga Hills, Ice Plains, Ice Mountains, Cold Beach, Mountains Extreme, Mountains Extremest, Mountain Valley
 
-BiomeSizeWhenBorder: 6
+BiomeSizeWhenBorder: 5
 
 
 #######################################################################
@@ -111,7 +111,7 @@ SurfaceBlock: GRASS
 
 GroundBlock: DIRT
 
-SurfaceAndGroundControl: GRASS, DIRT, 3.0, STONE, STONE, 10.0 
+SurfaceAndGroundControl: GRASS, DIRT, 3.0, STONE, STONE, 10.0
 
 ReplacedBlocks: None
 
@@ -180,7 +180,8 @@ Ore(EMERALD_ORE,5,1,100.0,4,32,STONE)
 UnderWaterOre(SAND,7,3,100.0,DIRT,GRASS)
 UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
 UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
-Tree(1,Taiga2,80)
+Tree(3,Taiga2,80)
+Tree(1,Birch,80)
 Plant(Dandelion,4,100.0,0,128,GRASS,DIRT)
 Plant(Fern,4,100.0,0,128,GRASS,DIRT)
 Plant(RedTulip,4,100.0,0,128,GRASS,DIRT)
@@ -202,7 +203,7 @@ Liquid(LAVA,10,100.0,8,128,STONE)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects: 
+BiomeObjects:
 
 
 #######################################################################
@@ -245,4 +246,3 @@ SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
 BiomeDictId: MOUNTAIN
 
 InheritMobsBiomeName: Extreme Hills Edge
-

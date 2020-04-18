@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends: 
+BiomeExtends:
 
 ResourceInheritance: true
 
@@ -22,7 +22,7 @@ BiomeRarity: 75
 
 BiomeColor: #696969
 
-ReplaceToBiomeName: 
+ReplaceToBiomeName:
 
 ####################
 # Isle biomes only #
@@ -38,9 +38,9 @@ BiomeRarityWhenIsle: 99
 # Border biomes only #
 ######################
 
-BiomeIsBorder: 
+BiomeIsBorder:
 
-NotBorderNear: 
+NotBorderNear:
 
 BiomeSizeWhenBorder: 8
 
@@ -57,7 +57,7 @@ BiomeVolatility: 0.45
 
 SmoothRadius: 3
 
-MaxAverageHeight: -0.2
+MaxAverageHeight: 0.0
 
 MaxAverageDepth: 0.0
 
@@ -84,7 +84,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 # ImprovedRivers:false #
 ########################
 
-RiverBiome: River Mountains
+RiverBiome:
 
 #######################
 # ImprovedRivers:true #
@@ -111,7 +111,7 @@ SurfaceBlock: GRASS
 
 GroundBlock: DIRT
 
-SurfaceAndGroundControl: GRASS, DIRT, 1.0, STONE, STONE, 10.0 
+SurfaceAndGroundControl: GRASS, DIRT, 1.0, STONE, STONE, 10.0
 
 ReplacedBlocks: (GRASS,STONE,141,256),(SNOW,AIR,90,140)
 
@@ -208,7 +208,7 @@ Plant(PUMPKIN:0,1,3.0,0,128,GRASS)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects: 
+BiomeObjects:
 
 
 #######################################################################
@@ -251,4 +251,3 @@ SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
 BiomeDictId: MOUNTAIN, FOREST, SPARSE
 
 InheritMobsBiomeName: Extreme Hills+
-

@@ -5,7 +5,7 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends: 
+BiomeExtends:
 
 ResourceInheritance: true
 
@@ -22,7 +22,7 @@ BiomeRarity: 75
 
 BiomeColor: #FFFFFF
 
-ReplaceToBiomeName: 
+ReplaceToBiomeName:
 
 ####################
 # Isle biomes only #
@@ -38,9 +38,9 @@ BiomeRarityWhenIsle: 99
 # Border biomes only #
 ######################
 
-BiomeIsBorder: 
+BiomeIsBorder:
 
-NotBorderNear: 
+NotBorderNear:
 
 BiomeSizeWhenBorder: 8
 
@@ -57,7 +57,7 @@ BiomeVolatility: 0.55
 
 SmoothRadius: 4
 
-MaxAverageHeight: -0.2
+MaxAverageHeight: 0.0
 
 MaxAverageDepth: 0.0
 
@@ -84,7 +84,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 # ImprovedRivers:false #
 ########################
 
-RiverBiome: River Mountains
+RiverBiome:
 
 #######################
 # ImprovedRivers:true #
@@ -111,7 +111,7 @@ SurfaceBlock: GRASS
 
 GroundBlock: DIRT
 
-SurfaceAndGroundControl: SNOW_BLOCK, SNOW_BLOCK, 3.0, STONE, STONE, 10.0 
+SurfaceAndGroundControl: SNOW_BLOCK, SNOW_BLOCK, 3.0, STONE, STONE, 10.0
 
 ReplacedBlocks: (GRASS,STONE,141,256),(DIRT,STONE,141,256)
 
@@ -196,7 +196,7 @@ Liquid(LAVA,10,100.0,8,128,STONE)
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects: 
+BiomeObjects:
 
 
 #######################################################################
@@ -236,7 +236,6 @@ SpawnWaterCreatures: [{"mob": "squid", "weight": 10, "min": 4, "max": 4}]
 
 SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
 
-BiomeDictId: 
+BiomeDictId:
 
-InheritMobsBiomeName: 
-
+InheritMobsBiomeName:
