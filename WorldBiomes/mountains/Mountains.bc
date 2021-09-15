@@ -45,7 +45,7 @@ BiomeCategory: extreme_hills
 #   Isle biomes:	BiomeSizeWhenIsle (see below)
 #   Border biomes: BiomeSizeWhenBorder (see below)
 #   River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 2
+BiomeSize: 3
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -53,11 +53,11 @@ BiomeSize: 2
 #   50 rarity mean 1/11 chance than other
 # For isle biomes see the BiomeRarityWhenIsle setting below.
 # Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
-BiomeRarity: 99
+BiomeRarity: 75
 
 # The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #A4A4A4
+BiomeColor: #606060
 
 
 #######################################################################
@@ -116,16 +116,16 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight defines how much height will be added during terrain generation
 # Must be between -10.0 and 10.0
 # Value 0.0 is equivalent to half of map height with all other settings at defaults.
-BiomeHeight: 0.0
+BiomeHeight: 0.5
 
 # Biome volatility.
-BiomeVolatility: 0.35
+BiomeVolatility: 0.55
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 8
+SmoothRadius: 4
 
 # Works the same way as SmoothRadius but only acts on CustomHeightControl. Must be between 0 and 32, inclusive.
 # Does nothing if Custom Height Control smoothing is not enabled in the world config.
@@ -146,9 +146,9 @@ Volatility1: 0.7
 Volatility2: 0.5
 
 # Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
-VolatilityWeight1: 1.5
+VolatilityWeight1: 0.75
 
-VolatilityWeight2: 0.8
+VolatilityWeight2: 0.4
 
 # Disable all noises except Volatility1 and Volatility2. Also disable default block chance from height.
 DisableBiomeHeight: false
@@ -169,7 +169,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 #######################################################################
 
 # The biome used as the river biome.
-RiverBiome: River Mountains
+RiverBiome:
 
 
 #######################################################################
@@ -214,7 +214,7 @@ SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 
 # Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
-ReplacedBlocks: (minecraft:grass_block,minecraft:stone,141,256),(otg:dirt,minecraft:stone,141,256),(minecraft:snow,minecraft:air,90,130)
+ReplacedBlocks: (minecraft:grass_block,minecraft:stone,141,256),(minecraft:dirt,minecraft:stone,141,256),(minecraft:snow,minecraft:air,90,160)
 
 
 #######################################################################
@@ -376,12 +376,12 @@ AdditionsTickChance: 0.0
 # Grass(PlantType,Grouped/NotGrouped,Frequency,Rarity,BlockSource[,BlockSource2,BlockSource3.....])
 # IceSpike(BlockName,IceSpikeType,Frequency,Rarity,MinAltitude,MaxAltitude,Blocksource[,BlockSource2,...])
 # Liquid(BlockName,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
-# Ore(BlockName,Size,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
+# Ore(BlockName,Size,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....],ExtendedParams,MaxSpawn)
 # Plant(PlantType,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
 # Reed(BlockName,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
 # SmallLake(BlockName,Frequency,Rarity,MinAltitude,MaxAltitude)
-# SurfacePatch(BlockName,DecorationBlockName,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....]
-# Tree(Frequency,TreeType,TreeTypeChance[,AdditionalTreeType,AdditionalTreeTypeChance.....])
+# SurfacePatch(BlockName,DecorationBlockName,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
+# Tree(Frequency,TreeType,TreeTypeChance[,AdditionalTreeType,AdditionalTreeTypeChance.....],ExtendedParams,MaxSpawn)
 # UnderGroundLake(MinSize,MaxSize,Frequency,Rarity,MinAltitude,MaxAltitude)
 # UnderWaterOre(BlockName,Size,Frequency,Rarity,BlockSource[,BlockSource2,BlockSource3.....])
 # UnderWaterPlant(PlantType,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
@@ -392,11 +392,12 @@ AdditionsTickChance: 0.0
 # SeaGrass(Frequency,Rarity,TallChance)
 # Kelp(Frequency,Rarity)
 # SeaPickle(Frequency,Rarity,Attempts)
-# Registry(RegistryKey)
+# Registry(RegistryKey,DecorationStage)
 # CoralMushroom(Frequency,Rarity)
 # CoralTree(Frequency,Rarity)
 # CoralClaw(Frequency,Rarity)
 # Iceberg(BlockName1,BlockName2,Chance[,AdditionalBlockName1,AdditionalBlockName2,AdditionalChance.....],TotalChance)
+# BasaltColumn(BlockName,Frequency,Rarity,BaseSize,SizeVariance,BaseHeight,HeightVariance,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
 
 # BlockName:	  	The name of the block, can include data.
 # BlockSource:	List of blocks the resource can spawn on/in. You can also use "Solid" or "All".
@@ -419,6 +420,13 @@ AdditionsTickChance: 0.0
 # IceSpikeType:  One of the ice spike types: Basement,HugeSpike,SmallSpike
 # Object:		Any custom object (bo2 or bo3) file but without the file extension.
 # RegistryKey:	Registry key for a (non-OTG) default or configured feature. For example: minecraft:plain_vegetation
+# DecorationStage: Optional, one of the vanilla decoration stages.
+#                Can be: RAW_GENERATION, LAKES, LOCAL_MODIFICATIONS, UNDERGROUND_STRUCTURES,
+# 				SURFACE_STRUCTURES, STRONGHOLDS, UNDERGROUND_ORES, UNDERGROUND_DECORATION,
+# 				VEGETAL_DECORATION, TOP_LAYER_MODIFICATION. VEGETAL_DECORATION by default.
+# ExtendedParams: Optional, set this to true if you want to use additional parameters, like MaxSpawn.
+# MaxSpawn: 		Optional, used with Frequency. When MaxSpawn spawn attempts have succeeded, stop spawning (for the current chunk).
+# 				For example, you can do 100 spawn attempts per chunk but stop after 5 have succeeded.
 
 # Plant and Grass resource: Both a resource of one block. Plant can place blocks underground, Grass cannot.
 # UnderWaterPlant resource: Similar to plant, but places blocks underwater.

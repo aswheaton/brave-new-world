@@ -6,10 +6,10 @@
 #######################################################################
 
 # Set this to true if this biome config is used with non-OTG biomes, configured in the WorldConfig via TemplateBiome()
-# OTG generates the terrain for the biome as configured in this file and spawns resources, but also allows the biome to spawn 
+# OTG generates the terrain for the biome as configured in this file and spawns resources, but also allows the biome to spawn
 # its own resources and mobs and apply its settings. Because of this, the following OTG settings cannot be used:
 # - Colors, Mob spawning, particles, sounds, vanilla structures, wetness, temperature.
-# What can be configured: 
+# What can be configured:
 #  - Biome generator settings.
 #  - Terrain settings.
 #  - Resources. Non-OTG biome resources are currently spawned after all OTG resources in the resourcequeue.
@@ -69,7 +69,7 @@ BiomeColor: #72789A
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: TaigaHills
+IsleInBiome: Mountains, TaigaHills
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -78,7 +78,7 @@ IsleInBiome: TaigaHills
 BiomeSizeWhenIsle: 7
 
 # Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
-BiomeRarityWhenIsle: 90
+BiomeRarityWhenIsle: 49
 
 #################
 # Border biomes #
@@ -93,7 +93,7 @@ BiomeRarityWhenIsle: 90
 BiomeIsBorder: Mountains, Cold Taiga
 
 # Whitelist of neighouring biomes that allow this border biome to spawn.
-OnlyBorderNear: 
+OnlyBorderNear:
 
 # Blacklist of neighbouring biomes that do not allow this border biome to spawn.
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
@@ -116,16 +116,16 @@ BiomeSizeWhenBorder: 5
 # BiomeHeight defines how much height will be added during terrain generation
 # Must be between -10.0 and 10.0
 # Value 0.0 is equivalent to half of map height with all other settings at defaults.
-BiomeHeight: -1.0
+BiomeHeight: -0.75
 
 # Biome volatility.
-BiomeVolatility: 0.25
+BiomeVolatility: 0.55
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 8
+SmoothRadius: 4
 
 # Works the same way as SmoothRadius but only acts on CustomHeightControl. Must be between 0 and 32, inclusive.
 # Does nothing if Custom Height Control smoothing is not enabled in the world config.
@@ -133,22 +133,22 @@ CustomHeightControlSmoothRadius: 2
 
 # If this value is greater than 0, then it will affect how much, on average, the terrain will rise before leveling off when it begins to increase in elevation.
 # If the value is less than 0, then it will cause the terrain to either increase to a lower height before leveling out or decrease in height if the value is a large enough negative.
-MaxAverageHeight: -0.2
+MaxAverageHeight: 0.0
 
-# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation. 
+# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation.
 # If the value is less than 0, then it will cause the terrain to either fall to a lesser depth before leveling out or increase in height if the value is a large enough negative.
 MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.5
+Volatility1: 0.7
 
 Volatility2: 0.5
 
 # Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
-VolatilityWeight1: 1.0
+VolatilityWeight1: 0.75
 
-VolatilityWeight2: 0.5
+VolatilityWeight2: 0.4
 
 # Disable all noises except Volatility1 and Volatility2. Also disable default block chance from height.
 DisableBiomeHeight: false
@@ -158,7 +158,7 @@ DisableBiomeHeight: false
 # Values which affect your configuration may be found only experimentally. Values may be very big, like ~3000.0 depends from height
 # Example:
 #   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-# Makes empty layer above bedrock layer. 
+# Makes empty layer above bedrock layer.
 CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
 
@@ -205,13 +205,13 @@ UnderWaterSurfaceBlock: minecraft:dirt
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
 # You can also use Iceberg to get iceberg generation like in vanilla frozen oceans. Iceberg accepts a normal SAGC string: "Iceberg <SAGC>", so you can use normal SAGC with it.
-SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 3.0, minecraft:stone, minecraft:stone, minecraft:stone, 10.0 
+SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 3.0, minecraft:stone, minecraft:gravel, minecraft:stone, 7.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
-# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
-# Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre, 
+# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height
+# Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
 ReplacedBlocks: None
@@ -281,13 +281,13 @@ WaterColor: #FFFFFF
 # Example: WaterColorControl: #FFFFFF,-0.8,#000000,0.0
 #   When the noise is below -0.8, the water will be white, between -0.8 and 0
 #   the water will be black, and above 0 the water will be the normal WaterColor.
-WaterColorControl: 
+WaterColorControl:
 
 # Biome grass color.
 GrassColor: #FFFFFF
 
 # Biome grass color control. See WaterColorControl.
-GrassColorControl: 
+GrassColorControl:
 
 # Biome grass color modifier, can be None, Swamp or DarkForest.
 GrassColorModifier: None
@@ -296,7 +296,7 @@ GrassColorModifier: None
 FoliageColor: #FFFFFF
 
 # Biome foliage color control. See WaterColorControl.
-FoliageColorControl: 
+FoliageColorControl:
 
 # Biome fog color.
 FogColor: #000000
@@ -309,16 +309,16 @@ WaterFogColor: #000000
 
 # Biome particle type, for example minecraft:white_ash.
 # Use the "otg particles" console command to get a list of particles.
-ParticleType: 
+ParticleType:
 
 # Biome particle probability, 0 by default.
 # *TODO: Test different values and document usage.
 ParticleProbability: 0.0
 
-# Music for the biome, takes a resource location. Leave empty to disable. Examples: 
+# Music for the biome, takes a resource location. Leave empty to disable. Examples:
 # 	Music: minecraft:music_disc.cat
 # 	Music: minecraft:music.nether.basalt_deltas
-Music: 
+Music:
 
 # Minimum delay for music to start, in ticks
 MusicMinDelay: 0
@@ -331,7 +331,7 @@ ReplaceCurrentMusic: false
 
 # Ambient sound for the biome. Leave empty to disable. Example:
 # 	AmbientSound: minecraft:ambient.cave
-AmbientSound: 
+AmbientSound:
 
 # Mood sound for the biome. Leave empty to disable. Example:
 # 	MoodSound: minecraft:ambient.crimson_forest.mood
@@ -348,7 +348,7 @@ MoodOffset: 2.0
 
 # Additions sound for the biome. Leave empty to disable. Example:
 # 	AdditionsSound: minecraft:ambient.soul_sand_valley.additions
-AdditionsSound: 
+AdditionsSound:
 
 # The tick chance that the additions sound plays
 AdditionsTickChance: 0.0
@@ -376,12 +376,12 @@ AdditionsTickChance: 0.0
 # Grass(PlantType,Grouped/NotGrouped,Frequency,Rarity,BlockSource[,BlockSource2,BlockSource3.....])
 # IceSpike(BlockName,IceSpikeType,Frequency,Rarity,MinAltitude,MaxAltitude,Blocksource[,BlockSource2,...])
 # Liquid(BlockName,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
-# Ore(BlockName,Size,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
+# Ore(BlockName,Size,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....],ExtendedParams,MaxSpawn)
 # Plant(PlantType,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
 # Reed(BlockName,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
 # SmallLake(BlockName,Frequency,Rarity,MinAltitude,MaxAltitude)
-# SurfacePatch(BlockName,DecorationBlockName,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....]
-# Tree(Frequency,TreeType,TreeTypeChance[,AdditionalTreeType,AdditionalTreeTypeChance.....])
+# SurfacePatch(BlockName,DecorationBlockName,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
+# Tree(Frequency,TreeType,TreeTypeChance[,AdditionalTreeType,AdditionalTreeTypeChance.....],ExtendedParams,MaxSpawn)
 # UnderGroundLake(MinSize,MaxSize,Frequency,Rarity,MinAltitude,MaxAltitude)
 # UnderWaterOre(BlockName,Size,Frequency,Rarity,BlockSource[,BlockSource2,BlockSource3.....])
 # UnderWaterPlant(PlantType,Frequency,Rarity,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
@@ -392,11 +392,12 @@ AdditionsTickChance: 0.0
 # SeaGrass(Frequency,Rarity,TallChance)
 # Kelp(Frequency,Rarity)
 # SeaPickle(Frequency,Rarity,Attempts)
-# Registry(RegistryKey)
+# Registry(RegistryKey,DecorationStage)
 # CoralMushroom(Frequency,Rarity)
 # CoralTree(Frequency,Rarity)
 # CoralClaw(Frequency,Rarity)
 # Iceberg(BlockName1,BlockName2,Chance[,AdditionalBlockName1,AdditionalBlockName2,AdditionalChance.....],TotalChance)
+# BasaltColumn(BlockName,Frequency,Rarity,BaseSize,SizeVariance,BaseHeight,HeightVariance,MinAltitude,MaxAltitude,BlockSource[,BlockSource2,BlockSource3.....])
 
 # BlockName:	  	The name of the block, can include data.
 # BlockSource:	List of blocks the resource can spawn on/in. You can also use "Solid" or "All".
@@ -417,8 +418,15 @@ AdditionsTickChance: 0.0
 # PlantType:	  	One of the plant types: Allium, AzureBluet, BlueOrchid, BrownMushroom, Dandelion, DeadBush, DoubleTallgrass, DoubleTallSeaGrass, Fern, LargeFern, Lilac, OrangeTulip, OxeyeDaisy, Peony, PinkTulip, Poppy, RedMushroom, RedTulip, RoseBush, SeaGrass, Sunflower, Tallgrass, WhiteTulip
 # 				or a block name
 # IceSpikeType:  One of the ice spike types: Basement,HugeSpike,SmallSpike
-# Object:		Any custom object (bo2 or bo3) file but without the file extension. 
+# Object:		Any custom object (bo2 or bo3) file but without the file extension.
 # RegistryKey:	Registry key for a (non-OTG) default or configured feature. For example: minecraft:plain_vegetation
+# DecorationStage: Optional, one of the vanilla decoration stages.
+#                Can be: RAW_GENERATION, LAKES, LOCAL_MODIFICATIONS, UNDERGROUND_STRUCTURES,
+# 				SURFACE_STRUCTURES, STRONGHOLDS, UNDERGROUND_ORES, UNDERGROUND_DECORATION,
+# 				VEGETAL_DECORATION, TOP_LAYER_MODIFICATION. VEGETAL_DECORATION by default.
+# ExtendedParams: Optional, set this to true if you want to use additional parameters, like MaxSpawn.
+# MaxSpawn: 		Optional, used with Frequency. When MaxSpawn spawn attempts have succeeded, stop spawning (for the current chunk).
+# 				For example, you can do 100 spawn attempts per chunk but stop after 5 have succeeded.
 
 # Plant and Grass resource: Both a resource of one block. Plant can place blocks underground, Grass cannot.
 # UnderWaterPlant resource: Similar to plant, but places blocks underwater.
@@ -644,4 +652,3 @@ SpawnMiscCreatures: []
 # Use this setting to inherit mob spawn lists from other biomes.
 # Accepts both OTG and non-OTG (vanilla or other mods') biomes. See also: BiomeDictId.
 InheritMobsBiomeName: Extreme Hills Edge
-
