@@ -45,7 +45,7 @@ BiomeCategory: extreme_hills
 #   Isle biomes:	BiomeSizeWhenIsle (see below)
 #   Border biomes: BiomeSizeWhenBorder (see below)
 #   River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 3
+BiomeSize: 2
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -125,7 +125,7 @@ BiomeVolatility: 0.55
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 4
+SmoothRadius: 8
 
 # Works the same way as SmoothRadius but only acts on CustomHeightControl. Must be between 0 and 32, inclusive.
 # Does nothing if Custom Height Control smoothing is not enabled in the world config.
@@ -141,7 +141,7 @@ MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.7
+Volatility1: -0.7
 
 Volatility2: 0.5
 
@@ -205,8 +205,8 @@ UnderWaterSurfaceBlock: minecraft:dirt
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
 # You can also use Iceberg to get iceberg generation like in vanilla frozen oceans. Iceberg accepts a normal SAGC string: "Iceberg <SAGC>", so you can use normal SAGC with it.
-SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 1.0, minecraft:stone, minecraft:stone, minecraft:stone, 10.0
-
+# SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 1.0, minecraft:stone, minecraft:stone, minecraft:stone, 10.0
+SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 2.0, minecraft:stone, minecraft:gravel, minecraft:stone, 7.0
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
@@ -214,7 +214,7 @@ SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 
 # Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
-ReplacedBlocks: (minecraft:grass_block,minecraft:stone,141,256),(minecraft:dirt,minecraft:stone,141,256),(minecraft:snow,minecraft:air,90,160)
+ReplacedBlocks: (minecraft:grass_block,minecraft:stone,144,256),(minecraft:dirt,minecraft:stone,144,256),(minecraft:snow,minecraft:air,90,160)
 
 
 #######################################################################
@@ -256,7 +256,7 @@ CooledLavaBlock: minecraft:obsidian
 # When this value is around 0.2, snow will fall on mountain peaks above y=90.
 # When this value is around 0.1, the whole biome will be covered in snow and ice.
 # However, on default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.25
+BiomeTemperature: 0.3
 
 # Set this to true to use variable temperatures within the biome based on noise.
 # Used for vanilla Frozen Ocean and Deep Frozen Ocean biomes to create patches of water/ice.
@@ -452,8 +452,8 @@ Liquid(minecraft:water,20,100.0,8,128,otg:stone)
 Liquid(minecraft:lava,10,100.0,8,128,otg:stone)
 SmallLake(minecraft:water,4,7.0,8,120)
 SmallLake(minecraft:lava,2,1.0,8,120)
-SurfacePatch(minecraft:snow_block,minecraft:snow,120,150,otg:dirt,minecraft:grass_block)
-SurfacePatch(minecraft:snow_block,minecraft:snow,125,155,otg:stone)
+# SurfacePatch(minecraft:snow_block,minecraft:snow,120,150,otg:dirt,minecraft:grass_block)
+# SurfacePatch(minecraft:snow_block,minecraft:snow,125,155,otg:stone)
 UnderWaterOre(minecraft:sand,7,3,100.0,otg:dirt,minecraft:grass_block)
 UnderWaterOre(minecraft:clay,4,1,100.0,otg:dirt,minecraft:clay)
 UnderWaterOre(minecraft:gravel,6,1,100.0,otg:dirt,minecraft:grass_block)

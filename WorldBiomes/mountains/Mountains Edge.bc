@@ -75,10 +75,10 @@ IsleInBiome: Mountains, TaigaHills
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenIsle: 7
+BiomeSizeWhenIsle: 6
 
 # Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
-BiomeRarityWhenIsle: 49
+BiomeRarityWhenIsle: 95
 
 #################
 # Border biomes #
@@ -169,7 +169,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 #######################################################################
 
 # The biome used as the river biome.
-RiverBiome: River
+RiverBiome:
 
 
 #######################################################################
@@ -256,7 +256,7 @@ CooledLavaBlock: minecraft:obsidian
 # When this value is around 0.2, snow will fall on mountain peaks above y=90.
 # When this value is around 0.1, the whole biome will be covered in snow and ice.
 # However, on default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.27
+BiomeTemperature: 0.32
 
 # Set this to true to use variable temperatures within the biome based on noise.
 # Used for vanilla Frozen Ocean and Deep Frozen Ocean biomes to create patches of water/ice.

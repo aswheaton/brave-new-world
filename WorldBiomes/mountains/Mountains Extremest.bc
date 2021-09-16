@@ -75,10 +75,10 @@ IsleInBiome: Mountains Extreme
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenIsle: 6
+BiomeSizeWhenIsle: 5
 
 # Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
-BiomeRarityWhenIsle: 99
+BiomeRarityWhenIsle: 100
 
 #################
 # Border biomes #
@@ -141,7 +141,7 @@ MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.7
+Volatility1: -0.7
 
 Volatility2: 0.5
 
@@ -256,7 +256,7 @@ CooledLavaBlock: minecraft:obsidian
 # When this value is around 0.2, snow will fall on mountain peaks above y=90.
 # When this value is around 0.1, the whole biome will be covered in snow and ice.
 # However, on default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.0
+BiomeTemperature: 0.25
 
 # Set this to true to use variable temperatures within the biome based on noise.
 # Used for vanilla Frozen Ocean and Deep Frozen Ocean biomes to create patches of water/ice.

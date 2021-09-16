@@ -75,7 +75,7 @@ IsleInBiome: Mountains
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenIsle: 5
+BiomeSizeWhenIsle: 4
 
 # Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
 BiomeRarityWhenIsle: 99
@@ -124,7 +124,7 @@ BiomeVolatility: 0.55
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 4
+SmoothRadius: 8
 
 # Works the same way as SmoothRadius but only acts on CustomHeightControl. Must be between 0 and 32, inclusive.
 # Does nothing if Custom Height Control smoothing is not enabled in the world config.
@@ -140,7 +140,7 @@ MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.7
+Volatility1: -0.7
 
 Volatility2: 0.5
 
@@ -213,7 +213,7 @@ SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 
 # Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
-ReplacedBlocks: (minecraft:grass_block,minecraft:stone,141,256),(minecraft:snow,minecraft:air,90,140)
+ReplacedBlocks: (minecraft:snow,minecraft:air,90,160)
 
 
 #######################################################################
@@ -264,7 +264,7 @@ UseFrozenOceanTemperature: false
 # Biome wetness. Float value from 0.0 to 1.0.
 # If this biome is a custom biome, and this value is set to 0, no rain will fall.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeWetness: 0.3
+BiomeWetness: 0.25
 
 # Biome sky color.
 SkyColor: #7BA5FF

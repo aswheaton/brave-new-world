@@ -78,7 +78,7 @@ IsleInBiome: Mountains, Mountains Extreme
 BiomeSizeWhenIsle: 6
 
 # Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
-BiomeRarityWhenIsle: 96
+BiomeRarityWhenIsle: 95
 
 #################
 # Border biomes #
@@ -205,7 +205,7 @@ UnderWaterSurfaceBlock: minecraft:dirt
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
 # You can also use Iceberg to get iceberg generation like in vanilla frozen oceans. Iceberg accepts a normal SAGC string: "Iceberg <SAGC>", so you can use normal SAGC with it.
-SurfaceAndGroundControl: minecraft:stone, minecraft:stone, minecraft:stone, -1.6, minecraft:granite, minecraft:granite, minecraft:granite, -0.8, minecraft:diorite, minecraft:diorite, minecraft:diorite, 0.0, minecraft:andesite, minecraft:andesite, minecraft:andesite, 1.5, minecraft:stone, minecraft:stone, minecraft:stone, 2.0, minecraft:grass_block, minecraft:dirt, minecraft:dirt, 10.0
+SurfaceAndGroundControl: minecraft:stone, minecraft:stone, minecraft:stone, -1.6, minecraft:granite, minecraft:granite, minecraft:granite, -0.8, minecraft:diorite, minecraft:diorite, minecraft:diorite, 0.0, minecraft:andesite, minecraft:andesite, minecraft:andesite, 1.5, minecraft:stone, minecraft:stone, minecraft:stone, 2.0, minecraft:grass_block, minecraft:dirt, minecraft:dirt, 7.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
