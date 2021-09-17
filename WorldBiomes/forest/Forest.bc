@@ -6,10 +6,10 @@
 #######################################################################
 
 # Set this to true if this biome config is used with non-OTG biomes, configured in the WorldConfig via TemplateBiome()
-# OTG generates the terrain for the biome as configured in this file and spawns resources, but also allows the biome to spawn 
+# OTG generates the terrain for the biome as configured in this file and spawns resources, but also allows the biome to spawn
 # its own resources and mobs and apply its settings. Because of this, the following OTG settings cannot be used:
 # - Colors, Mob spawning, particles, sounds, vanilla structures, wetness, temperature.
-# What can be configured: 
+# What can be configured:
 #  - Biome generator settings.
 #  - Terrain settings.
 #  - Resources. Non-OTG biome resources are currently spawned after all OTG resources in the resourcequeue.
@@ -69,7 +69,7 @@ BiomeColor: #056621
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: 
+IsleInBiome:
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -90,15 +90,15 @@ BiomeRarityWhenIsle: 96
 # List of biomes this biome can be a border of.
 # For example, the Beach biome is a border on the Ocean biome, so
 # it can spawn anywhere on the border of an ocean.
-BiomeIsBorder: 
+BiomeIsBorder:
 
 # Whitelist of neighouring biomes that allow this border biome to spawn.
-OnlyBorderNear: 
+OnlyBorderNear:
 
 # Blacklist of neighbouring biomes that do not allow this border biome to spawn.
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
 # Only used when OnlyBorderNear is empty / not used.
-NotBorderNear: 
+NotBorderNear:
 
 # Size of this biome when spawned as a border biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -116,10 +116,9 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight defines how much height will be added during terrain generation
 # Must be between -10.0 and 10.0
 # Value 0.0 is equivalent to half of map height with all other settings at defaults.
-BiomeHeight: 0.18
-
+BiomeHeight: -1.55
 # Biome volatility.
-BiomeVolatility: 0.4
+BiomeVolatility: 0.05
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
@@ -135,7 +134,7 @@ CustomHeightControlSmoothRadius: 2
 # If the value is less than 0, then it will cause the terrain to either increase to a lower height before leveling out or decrease in height if the value is a large enough negative.
 MaxAverageHeight: 0.0
 
-# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation. 
+# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation.
 # If the value is less than 0, then it will cause the terrain to either fall to a lesser depth before leveling out or increase in height if the value is a large enough negative.
 MaxAverageDepth: 0.0
 
@@ -158,7 +157,7 @@ DisableBiomeHeight: false
 # Values which affect your configuration may be found only experimentally. Values may be very big, like ~3000.0 depends from height
 # Example:
 #   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-# Makes empty layer above bedrock layer. 
+# Makes empty layer above bedrock layer.
 CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
 
@@ -205,13 +204,13 @@ UnderWaterSurfaceBlock: minecraft:dirt
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
 # You can also use Iceberg to get iceberg generation like in vanilla frozen oceans. Iceberg accepts a normal SAGC string: "Iceberg <SAGC>", so you can use normal SAGC with it.
-SurfaceAndGroundControl: minecraft:stone, minecraft:stone, minecraft:stone, -5.0, minecraft:grass_block, minecraft:dirt, minecraft:dirt, 0.0, minecraft:podzol, minecraft:dirt, minecraft:dirt, 2.0, minecraft:grass_block, minecraft:dirt, minecraft:dirt, 7.0 
+SurfaceAndGroundControl: minecraft:stone, minecraft:stone, minecraft:stone, -5.0, minecraft:grass_block, minecraft:dirt, minecraft:dirt, 0.0, minecraft:podzol, minecraft:dirt, minecraft:dirt, 2.0, minecraft:grass_block, minecraft:dirt, minecraft:dirt, 7.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
-# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
-# Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre, 
+# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height
+# Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
 ReplacedBlocks: (minecraft:grass_block,minecraft:stone,0,56),(otg:dirt,minecraft:stone,0,56),(minecraft:sand,minecraft:gravel,95,255)
@@ -281,13 +280,13 @@ WaterColor: #FFFFFF
 # Example: WaterColorControl: #FFFFFF,-0.8,#000000,0.0
 #   When the noise is below -0.8, the water will be white, between -0.8 and 0
 #   the water will be black, and above 0 the water will be the normal WaterColor.
-WaterColorControl: 
+WaterColorControl:
 
 # Biome grass color.
 GrassColor: #FFFFFF
 
 # Biome grass color control. See WaterColorControl.
-GrassColorControl: 
+GrassColorControl:
 
 # Biome grass color modifier, can be None, Swamp or DarkForest.
 GrassColorModifier: None
@@ -296,7 +295,7 @@ GrassColorModifier: None
 FoliageColor: #FFFFFF
 
 # Biome foliage color control. See WaterColorControl.
-FoliageColorControl: 
+FoliageColorControl:
 
 # Biome fog color.
 FogColor: #000000
@@ -309,16 +308,16 @@ WaterFogColor: #000000
 
 # Biome particle type, for example minecraft:white_ash.
 # Use the "otg particles" console command to get a list of particles.
-ParticleType: 
+ParticleType:
 
 # Biome particle probability, 0 by default.
 # *TODO: Test different values and document usage.
 ParticleProbability: 0.0
 
-# Music for the biome, takes a resource location. Leave empty to disable. Examples: 
+# Music for the biome, takes a resource location. Leave empty to disable. Examples:
 # 	Music: minecraft:music_disc.cat
 # 	Music: minecraft:music.nether.basalt_deltas
-Music: 
+Music:
 
 # Minimum delay for music to start, in ticks
 MusicMinDelay: 0
@@ -331,7 +330,7 @@ ReplaceCurrentMusic: false
 
 # Ambient sound for the biome. Leave empty to disable. Example:
 # 	AmbientSound: minecraft:ambient.cave
-AmbientSound: 
+AmbientSound:
 
 # Mood sound for the biome. Leave empty to disable. Example:
 # 	MoodSound: minecraft:ambient.crimson_forest.mood
@@ -348,7 +347,7 @@ MoodOffset: 2.0
 
 # Additions sound for the biome. Leave empty to disable. Example:
 # 	AdditionsSound: minecraft:ambient.soul_sand_valley.additions
-AdditionsSound: 
+AdditionsSound:
 
 # The tick chance that the additions sound plays
 AdditionsTickChance: 0.0
@@ -417,7 +416,7 @@ AdditionsTickChance: 0.0
 # PlantType:	  	One of the plant types: Allium, AzureBluet, BlueOrchid, BrownMushroom, Dandelion, DeadBush, DoubleTallgrass, DoubleTallSeaGrass, Fern, LargeFern, Lilac, OrangeTulip, OxeyeDaisy, Peony, PinkTulip, Poppy, RedMushroom, RedTulip, RoseBush, SeaGrass, Sunflower, Tallgrass, WhiteTulip
 # 				or a block name
 # IceSpikeType:  One of the ice spike types: Basement,HugeSpike,SmallSpike
-# Object:		Any custom object (bo2 or bo3) file but without the file extension. 
+# Object:		Any custom object (bo2 or bo3) file but without the file extension.
 # RegistryKey:	Registry key for a (non-OTG) default or configured feature. For example: minecraft:plain_vegetation
 
 # Plant and Grass resource: Both a resource of one block. Plant can place blocks underground, Grass cannot.
@@ -649,4 +648,3 @@ SpawnMiscCreatures: []
 # Use this setting to inherit mob spawn lists from other biomes.
 # Accepts both OTG and non-OTG (vanilla or other mods') biomes. See also: BiomeDictId.
 InheritMobsBiomeName: Forest
-
