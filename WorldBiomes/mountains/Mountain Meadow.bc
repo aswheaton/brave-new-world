@@ -20,13 +20,13 @@ TemplateForBiome: false
 # place modded blocks, items and mobs in it.
 # Example: HOT, DRY, SANDY, OVERWORLD
 # TemplateForBiome biomes inherit these from the targeted biomes.
-BiomeDictTags: MOUNTAIN, FOREST, SPARSE
+BiomeDictTags: MOUNTAIN
 
 # Set a category for this biome, used by vanilla for... something
 # Accepts one of the following values:
 # none, taiga, extreme_hills, jungle, mesa, plains, savanna, icy, the_end, beach, forest, ocean, desert, river, swamp, mushroom, nether
 # TemplateForBiome biomes inherits this from the targeted biomes.
-BiomeCategory: plains
+BiomeCategory: extreme_hills
 
 
 #######################################################################
@@ -45,7 +45,7 @@ BiomeCategory: plains
 #   Isle biomes:	BiomeSizeWhenIsle (see below)
 #   Border biomes: BiomeSizeWhenBorder (see below)
 #   River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 4
+BiomeSize: 6
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -53,11 +53,11 @@ BiomeSize: 4
 #   50 rarity mean 1/11 chance than other
 # For isle biomes see the BiomeRarityWhenIsle setting below.
 # Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
-BiomeRarity: 75
+BiomeRarity: 97
 
 # The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #696969
+BiomeColor: #72789A
 
 
 #######################################################################
@@ -75,10 +75,10 @@ IsleInBiome: Mountains
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenIsle: 5
+BiomeSizeWhenIsle: 6
 
 # Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
-BiomeRarityWhenIsle: 99
+BiomeRarityWhenIsle: 95
 
 #################
 # Border biomes #
@@ -104,7 +104,7 @@ NotBorderNear:
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* borders. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenBorder number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenBorder: 8
+BiomeSizeWhenBorder: 5
 
 
 #######################################################################
@@ -116,9 +116,10 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight defines how much height will be added during terrain generation
 # Must be between -10.0 and 10.0
 # Value 0.0 is equivalent to half of map height with all other settings at defaults.
-BiomeHeight: 1.25
+BiomeHeight: -0.25
+
 # Biome volatility.
-BiomeVolatility: 0.55
+BiomeVolatility: 0.35
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
@@ -140,9 +141,9 @@ MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: -0.7
+Volatility1: 0.7
 
-Volatility2: 0.15
+Volatility2: 0.5
 
 # Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
 VolatilityWeight1: 0.75
@@ -204,7 +205,7 @@ UnderWaterSurfaceBlock: minecraft:dirt
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
 # You can also use Iceberg to get iceberg generation like in vanilla frozen oceans. Iceberg accepts a normal SAGC string: "Iceberg <SAGC>", so you can use normal SAGC with it.
-SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 1.0, minecraft:stone, minecraft:stone, minecraft:stone, 10.0
+SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 3.0, minecraft:stone, minecraft:gravel, minecraft:stone, 7.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
@@ -213,7 +214,7 @@ SurfaceAndGroundControl: minecraft:grass_block, minecraft:dirt, minecraft:dirt, 
 # Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
-ReplacedBlocks: (minecraft:snow,minecraft:air,90,160)
+ReplacedBlocks: None
 
 
 #######################################################################
@@ -221,7 +222,7 @@ ReplacedBlocks: (minecraft:snow,minecraft:air,90,160)
 #######################################################################
 
 # Set this to false to use the "Water / Lava & Frozen States" settings of this biome.
-UseWorldWaterLevel: false
+UseWorldWaterLevel: true
 
 # Set water level. Every empty between this levels will be fill water or another block from WaterBlock.
 WaterLevelMax: 63
@@ -255,7 +256,7 @@ CooledLavaBlock: minecraft:obsidian
 # When this value is around 0.2, snow will fall on mountain peaks above y=90.
 # When this value is around 0.1, the whole biome will be covered in snow and ice.
 # However, on default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.25
+BiomeTemperature: 0.32
 
 # Set this to true to use variable temperatures within the biome based on noise.
 # Used for vanilla Frozen Ocean and Deep Frozen Ocean biomes to create patches of water/ice.
@@ -264,7 +265,7 @@ UseFrozenOceanTemperature: false
 # Biome wetness. Float value from 0.0 to 1.0.
 # If this biome is a custom biome, and this value is set to 0, no rain will fall.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeWetness: 0.25
+BiomeWetness: 0.3
 
 # Biome sky color.
 SkyColor: #7BA5FF
@@ -434,6 +435,10 @@ AdditionsTickChance: 0.0
 # Vein resource: Starts an area where ores will spawn. Can be slow, so use a low Rarity (smaller than 1).
 # CustomStructure resource: Starts a BO3 or BO4 structure in the chunk if spawn requirements are met.
 
+SmallLake(minecraft:water,4,7.0,8,120)
+SmallLake(minecraft:lava,2,1.0,8,120)
+UnderGroundLake(25,60,2,5.0,0,50)
+Dungeon(8.0,100,100)
 Ore(minecraft:dirt,33,10,100.0,0,255,otg:stone)
 Ore(minecraft:gravel,33,8,100.0,0,255,otg:stone)
 Ore(minecraft:granite,33,10,100.0,0,80,otg:stone)
@@ -446,27 +451,22 @@ Ore(minecraft:redstone_ore,8,8,100.0,0,16,otg:stone)
 Ore(minecraft:diamond_ore,8,1,100.0,0,16,otg:stone)
 Ore(minecraft:lapis_ore,7,1,100.0,0,16,otg:stone)
 Ore(minecraft:emerald_ore,5,1,100.0,4,32,otg:stone)
-UnderGroundLake(25,60,2,5.0,0,50)
-# Liquid(minecraft:water,20,100.0,8,128,otg:stone)
-# Liquid(minecraft:lava,10,100.0,8,128,otg:stone)
-SmallLake(minecraft:water,4,7.0,8,120)
-SmallLake(minecraft:lava,2,1.0,8,120)
-SurfacePatch(minecraft:snow_block,minecraft:snow,130,160,otg:dirt,minecraft:grass_block)
-SurfacePatch(minecraft:snow_block,minecraft:snow,135,165,otg:stone)
 UnderWaterOre(minecraft:sand,7,3,100.0,otg:dirt,minecraft:grass_block)
 UnderWaterOre(minecraft:clay,4,1,100.0,otg:dirt,minecraft:clay)
 UnderWaterOre(minecraft:gravel,6,1,100.0,otg:dirt,minecraft:grass_block)
-Dungeon(8.0,100,100)
-Tree(1,ME15,40,ME16,40,ME17,40,ME18,40)
-Tree(1,Taiga1,50,Taiga2,100)
-Tree(1,we-AndesiteRock,5,we-CoalRock,5,we-GraniteRock,5)
-Grass(Tallgrass,NotGrouped,10,100.0,otg:dirt,minecraft:grass_block)
-Plant(Dandelion,4,100.0,0,128,otg:dirt,minecraft:grass_block)
-Plant(Allium,4,100.0,0,138,otg:dirt,minecraft:grass_block)
-Plant(Tallgrass,20,100.0,0,138,otg:dirt,minecraft:grass_block)
-Plant(Fern,4,100.0,128,255,otg:dirt,minecraft:grass_block)
-Plant(LargeFern,4,100.0,140,255,otg:dirt,minecraft:grass_block)
+Tree(3,Taiga2,50,Birch,50)
+Plant(Dandelion,5,100.0,0,136,otg:dirt,minecraft:grass_block)
+Plant(Cornflower,4,100.0,0,136,otg:dirt,minecraft:grass_block)
+Plant(Poppy,4,100.0,0,136,otg:dirt,minecraft:grass_block)
+Plant(Allium,5,100.0,0,136,otg:dirt,minecraft:grass_block)
+Plant(OxeyeDaisy,5,100.0,0,136,otg:dirt,minecraft:grass_block)
+Plant(AzureBluet,4,100.0,0,136,otg:dirt,minecraft:grass_block)
+Plant(Fern,4,100.0,0,136,otg:dirt,minecraft:grass_block)
+Grass(Tallgrass,NotGrouped,40,100.0,otg:dirt,minecraft:grass_block)
+Grass(DoubleTallgrass,Grouped,20,100.0,otg:dirt,minecraft:grass_block)
 Plant(minecraft:carved_pumpkin[facing=south],1,3.0,0,128,minecraft:grass_block)
+Liquid(minecraft:water,20,100.0,8,128,otg:stone)
+Liquid(minecraft:lava,10,100.0,8,128,otg:stone)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -655,4 +655,4 @@ SpawnMiscCreatures: []
 # will override inherited mob settings for the same mob in the same mob category.
 # Use this setting to inherit mob spawn lists from other biomes.
 # Accepts both OTG and non-OTG (vanilla or other mods') biomes. See also: BiomeDictId.
-InheritMobsBiomeName: Extreme Hills+
+InheritMobsBiomeName: Extreme Hills Edge

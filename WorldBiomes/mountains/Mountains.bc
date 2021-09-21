@@ -45,7 +45,7 @@ BiomeCategory: extreme_hills
 #   Isle biomes:	BiomeSizeWhenIsle (see below)
 #   Border biomes: BiomeSizeWhenBorder (see below)
 #   River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 2
+BiomeSize: 3
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -116,7 +116,7 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight defines how much height will be added during terrain generation
 # Must be between -10.0 and 10.0
 # Value 0.0 is equivalent to half of map height with all other settings at defaults.
-BiomeHeight: 0.5
+BiomeHeight: 0.45
 
 # Biome volatility.
 BiomeVolatility: 0.55
@@ -141,9 +141,9 @@ MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: -0.7
+Volatility1: 0.7
 
-Volatility2: 0.5
+Volatility2: 0.35
 
 # Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
 VolatilityWeight1: 0.75
