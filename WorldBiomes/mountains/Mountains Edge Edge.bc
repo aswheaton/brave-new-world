@@ -57,7 +57,7 @@ BiomeRarity: 97
 
 # The hexadecimal color value of this biome. Used in the output of the /otg map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #72789A
+BiomeColor: #000000
 
 
 #######################################################################
@@ -69,7 +69,7 @@ BiomeColor: #72789A
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: TaigaHills
+IsleInBiome:
 
 # Size of this biome when spawned as an isle biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
@@ -90,7 +90,7 @@ BiomeRarityWhenIsle: 95
 # List of biomes this biome can be a border of.
 # For example, the Beach biome is a border on the Ocean biome, so
 # it can spawn anywhere on the border of an ocean.
-BiomeIsBorder: Mountains, Cold Taiga
+BiomeIsBorder: Mountains Edge
 
 # Whitelist of neighouring biomes that allow this border biome to spawn.
 OnlyBorderNear:
@@ -98,13 +98,13 @@ OnlyBorderNear:
 # Blacklist of neighbouring biomes that do not allow this border biome to spawn.
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
 # Only used when OnlyBorderNear is empty / not used.
-NotBorderNear: Beach, Cold Taiga Hills, Ice Plains, Ice Mountains, Cold Beach, Mountains Extreme, Mountains Extremest, Mountain Valley
+NotBorderNear: Mountains, Mountains Extreme, Mountains Extremest, Mountain Valley
 
 # Size of this biome when spawned as a border biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* borders. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenBorder number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenBorder: 5
+BiomeSizeWhenBorder: 8
 
 
 #######################################################################
@@ -141,7 +141,7 @@ MaxAverageDepth: 0.0
 
 # Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
 # Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.7
+Volatility1: -0.7
 
 Volatility2: 0.35
 
@@ -169,7 +169,7 @@ CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 #######################################################################
 
 # The biome used as the river biome.
-RiverBiome:
+RiverBiome: River
 
 
 #######################################################################
@@ -451,7 +451,7 @@ Ore(minecraft:redstone_ore,8,8,100.0,0,16,otg:stone)
 Ore(minecraft:diamond_ore,8,1,100.0,0,16,otg:stone)
 Ore(minecraft:lapis_ore,7,1,100.0,0,16,otg:stone)
 Ore(minecraft:emerald_ore,5,1,100.0,4,32,otg:stone)
-UnderWaterOre(minecraft:sand,7,3,100.0,otg:dirt,minecraft:grass_block)
+# UnderWaterOre(minecraft:sand,7,3,100.0,otg:dirt,minecraft:grass_block)
 UnderWaterOre(minecraft:clay,4,1,100.0,otg:dirt,minecraft:clay)
 UnderWaterOre(minecraft:gravel,6,1,100.0,otg:dirt,minecraft:grass_block)
 Tree(3,Taiga2,80)
