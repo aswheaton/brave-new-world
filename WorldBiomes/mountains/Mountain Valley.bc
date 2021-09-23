@@ -230,7 +230,7 @@ WaterLevelMax: 63
 WaterLevelMin: 0
 
 # The block used when placing water in the biome.
-WaterBlock: minecraft:ice
+WaterBlock: minecraft:water
 
 # The block used as ice. Ice only spawns if the BiomeTemperature is low enough.
 IceBlock: minecraft:ice
