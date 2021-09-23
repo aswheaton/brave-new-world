@@ -116,7 +116,7 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight defines how much height will be added during terrain generation
 # Must be between -10.0 and 10.0
 # Value 0.0 is equivalent to half of map height with all other settings at defaults.
-BiomeHeight: -2.95
+BiomeHeight: -2.65
 
 # Biome volatility.
 BiomeVolatility: 0.1
@@ -125,7 +125,7 @@ BiomeVolatility: 0.1
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 2
+SmoothRadius: 10
 
 # Works the same way as SmoothRadius but only acts on CustomHeightControl. Must be between 0 and 32, inclusive.
 # Does nothing if Custom Height Control smoothing is not enabled in the world config.

@@ -26,7 +26,7 @@ BiomeDictTags: BEACH
 # Accepts one of the following values:
 # none, taiga, extreme_hills, jungle, mesa, plains, savanna, icy, the_end, beach, forest, ocean, desert, river, swamp, mushroom, nether
 # TemplateForBiome biomes inherits this from the targeted biomes.
-BiomeCategory: plains
+BiomeCategory: beach
 
 
 #######################################################################
@@ -93,18 +93,18 @@ BiomeRarityWhenIsle: 97
 BiomeIsBorder: Cold Ocean, Deep Cold Ocean, Deep Frozen Ocean, Deep Lukewarm Ocean, Deep Ocean, Frozen Ocean, Lukewarm Ocean, Ocean, Warm Ocean
 
 # Whitelist of neighouring biomes that allow this border biome to spawn.
-OnlyBorderNear: Mountains Edge, Mountains, Mountains Extreme, Mountains Extremest, Mountain Valley
+OnlyBorderNear: Mountains Edge Edge, Mountains Edge, Mountains, Mountains Extreme, Mountains Extremest, Mountain Valley, Mountain Meadow
 
 # Blacklist of neighbouring biomes that do not allow this border biome to spawn.
 # For example, the Beach biome will never spawn next to an Extreme Hills biome.
 # Only used when OnlyBorderNear is empty / not used.
-NotBorderNear: Plains, Plains Hills
+NotBorderNear:
 
 # Size of this biome when spawned as a border biome in BiomeMode: Normal.
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* borders. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenBorder number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenBorder: 8
+BiomeSizeWhenBorder: 9
 
 
 #######################################################################
@@ -125,7 +125,7 @@ BiomeVolatility: 0.025
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
 # So if two biomes next to each other have both a smooth radius of 2, the
 # resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 2
+SmoothRadius: 4
 
 # Works the same way as SmoothRadius but only acts on CustomHeightControl. Must be between 0 and 32, inclusive.
 # Does nothing if Custom Height Control smoothing is not enabled in the world config.
@@ -185,7 +185,7 @@ StoneBlock: minecraft:stone
 SurfaceBlock: minecraft:gravel
 
 # The ground block used for the biome, usually DIRT.
-GroundBlock: minecraft:gravel
+GroundBlock: minecraft:stone
 
 # The surface block used for the biome when underwater, usually the same as GroundBlock.
 UnderWaterSurfaceBlock: minecraft:gravel
@@ -214,7 +214,7 @@ SurfaceAndGroundControl:
 # Only the following biome resources are affected: CustomObject, CustomStructure, Ore, UnderWaterOre,
 # Vein, SurfacePatch, Boulder, IceSpike.
 # BO's used as CustomObject/CustomStructure may have DoReplaceBlocks:false to save performance.
-ReplacedBlocks: None
+ReplacedBlocks: (GRAVEL,STONE,66,255)
 
 
 #######################################################################
@@ -449,17 +449,13 @@ Ore(minecraft:lapis_ore,7,1,100.0,0,15,otg:stone)
 UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(minecraft:water,20,100.0,8,128,otg:stone)
 Liquid(minecraft:lava,10,100.0,8,128,otg:stone)
-SmallLake(minecraft:water,4,7.0,8,119)
-SmallLake(minecraft:lava,2,1.0,8,119)
-SmallLake(minecraft:lava,2,8.0,6,50)
-UnderWaterOre(minecraft:sand,7,3,100.0,otg:dirt,minecraft:grass_block)
-UnderWaterOre(minecraft:clay,4,1,100.0,otg:dirt,minecraft:clay)
-UnderWaterOre(minecraft:gravel,6,1,100.0,otg:dirt,minecraft:grass_block)
+# UnderWaterOre(minecraft:sand,7,3,100.0,otg:dirt,minecraft:grass_block)
+# UnderWaterOre(minecraft:clay,4,1,100.0,otg:dirt,minecraft:clay)
+# UnderWaterOre(minecraft:gravel,6,1,100.0,otg:dirt,minecraft:grass_block)
 Dungeon(8.0,100,100)
 Grass(Tallgrass,NotGrouped,10,100.0,otg:dirt,minecraft:grass_block)
 Plant(Dandelion,2,100.0,0,128,otg:dirt,minecraft:grass_block)
 Plant(minecraft:pumpkin,1,3.0,0,128,minecraft:grass_block)
-CustomObject(UseWorld)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
